@@ -1,0 +1,95 @@
+@use '../variables/layout';
+
+#home {
+  display: flex;
+  justify-content: space-between;
+  
+  aside {
+    width: layout.$aside-width;
+
+    ul {
+      display: block;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      li {
+
+        &.hero {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          height: 100vh;
+          font-size: 5vw;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  main {
+    width: layout.$main-width;
+
+    section.hero {
+      display: block;
+      position: relative;
+      height: 100vh;
+
+      h2 {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        vertical-align: middle;
+
+        & > span {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 33.33%;
+
+          &:nth-child(1) {
+            font-size: 15.25vw;
+          }
+  
+          &:nth-child(2) {
+            position: relative;
+            border-top: layout.$border;
+            border-bottom: layout.$border;
+            white-space: nowrap;
+            overflow: hidden;
+
+            span {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              font-size: 13vw;
+
+              &::before {
+                content: "2022 • ";
+              }
+
+              &::after {
+                content: " • 2022";
+              }
+            }
+          }
+
+          &:nth-child(3) {
+            font-size: 15.6vw;
+          }
+        }
+      }
+
+      // .years {
+      //   position: absolute;
+      //   top: 50%;
+      //   transform: translate(
+      //     z
+      //   );
+      // }
+    }
+  }
+}

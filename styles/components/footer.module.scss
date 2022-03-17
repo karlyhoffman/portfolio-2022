@@ -1,0 +1,22 @@
+@use '../variables/layout';
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  z-index: 1;
+
+  .col_left,
+  .col_right {
+    border-top: layout.$border;
+    padding: 15px 5px;
+  }
+
+  .col_left {
+    width: layout.$aside-width;
+  }
+
+  .col_right {
+    width: layout.$main-width;
+  }
+}

@@ -1,0 +1,9 @@
+@font-face {
+  font-family: 'Fjalla One';
+  src: url('/fonts/fjalla-one.woff2') format('woff2'),
+       url('/fonts/fjalla-one.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+$fjalla-one: 'Fjalla One', sans-serif;

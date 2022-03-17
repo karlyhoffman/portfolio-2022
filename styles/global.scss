@@ -1,0 +1,57 @@
+@use 'variables/colors';
+@use 'variables/fonts';
+@use 'variables/layout';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: colors.$black;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: block;
+  position: relative;
+  background-color: colors.$white;
+  color: colors.$black;
+  font-family: fonts.$fjalla-one;
+  line-height: 1;
+  margin: 0;
+  padding: layout.$border-width;
+  
+  &::before {
+    content: "";
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: layout.$border;
+    pointer-events: none;
+    z-index: 3;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.sr-only {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}

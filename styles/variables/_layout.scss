@@ -1,0 +1,10 @@
+@use './colors';
+
+$border-width: 12px;
+$border: $border-width solid colors.$black;
+
+$aside-width: 25vw;
+$nav-width: 6.5vw; 
+
+
+$main-width: calc(100% - #{$aside-width} - #{$nav-width} - #{$border-width * 0});

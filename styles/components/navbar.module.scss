@@ -1,0 +1,42 @@
+@use '../variables/colors';
+@use '../variables/layout';
+
+.navigation {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: calc(#{layout.$aside-width} + #{layout.$border-width});
+  bottom: 0;
+  width: layout.$nav-width;
+  border: layout.$border;
+  z-index: 2;
+
+  nav {
+    height: 100%;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      height: 100%;
+      list-style: none;
+      font-size: 1.1vw;
+      margin: 0;
+      padding: 5px;
+
+      li {
+        display: block;
+        width: 100%;
+        border-radius: 1px;
+        text-align: center;
+        padding: 1vh 0;
+
+        &.active {
+          background-color: colors.$black;
+          color: colors.$white;
+        }
+      }
+    }
+  }
+}
