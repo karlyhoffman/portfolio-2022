@@ -52,7 +52,7 @@ const InfiniteLoop = ({ children, className, reverse = false }) => {
       : gsap.utils.unitize((x) => parseFloat(x) % width); // force x value to be between 0 and total width using modulus
 
     const moveItems = gsap.to(itemsRef.current, {
-      duration: itemsRef.current.length * 5,
+      duration: 60,
       repeat: -1,
       ease: "none",
       x: `${reverse ? "-" : "+"}=${width}`,
@@ -61,7 +61,7 @@ const InfiniteLoop = ({ children, className, reverse = false }) => {
       },
     });
 
-    timeline.add(moveItems);
+    timeline.add(moveItems).play(1000);
 
     /* Increase rotation speed on scroll */
     ScrollTrigger.create({
@@ -69,9 +69,9 @@ const InfiniteLoop = ({ children, className, reverse = false }) => {
       trigger: "body",
       start: "top top",
       end: "bottom bottom",
-      onUpdate: ({ getVelocity }) => {
+      onUpdate: ({ getVelocity, direction }) => {
         const velocity = getVelocity();
-        const speed = speed === 0 ? 1 : velocity * 0.0075; // determine direction
+        const speed = velocity * 0.0075; // determines direction too
         gsap.to(timeline, {
           timeScale: speed,
           duration: 1,
@@ -86,7 +86,7 @@ const InfiniteLoop = ({ children, className, reverse = false }) => {
       timeline.pause(0).kill(true);
       ScrollTrigger.getById(animationID).kill(true);
     };
-  }, [windowWidth]);
+  }, [windowWidth, reverse]);
 
   useEffect(() => {
     itemsRef.current = itemsRef.current.slice(0, items.length);

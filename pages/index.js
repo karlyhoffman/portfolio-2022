@@ -39,6 +39,7 @@ export default function Home() {
           <h1 className="sr-only">
             Karly Hoffman&apos;s {currentYear} Developer Portfolio
           </h1>
+
           <div className={styles.title} aria-hidden="true">
             <div>
               <span>KARLY HOFFMAN</span>
@@ -46,13 +47,12 @@ export default function Home() {
             <div>
               <span>DEVELOPER</span>
             </div>
-            <div className="infinite-loop">
-              <span>
-                {currentYear} • {currentYear} •{" "}
-              </span>
-              <span>
-                {currentYear} • {currentYear} •{" "}
-              </span>
+            <div>
+              <InfiniteLoop reverse>
+                {[...Array(8).keys()].map((el) => (
+                  <span key={el}>{currentYear} • </span>
+                ))}
+              </InfiniteLoop>
             </div>
             <div>
               <span>PORTFOLIO</span>

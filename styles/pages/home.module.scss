@@ -77,7 +77,7 @@
             height: calc(100vh - #{$border-width});
           }
 
-          div {
+          & > div {
             width: 100%;
             display: flex;
             justify-content: center;
@@ -114,15 +114,10 @@
               position: relative;
               font-size: 17vw;
               padding-top: 1.5vw;
-              overflow: hidden;
 
               @media screen and (min-width: $desktop) {
                 font-size: 15vw;
                 padding-top: 1.25vw;
-              }
-
-              span {
-                white-space: nowrap;
               }
             }
 
@@ -175,7 +170,6 @@
           .album {
             display: block;
             position: relative;
-            overflow: hidden;
             padding: 10px 5px;
             background-color: $white;
 
