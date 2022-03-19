@@ -3,6 +3,7 @@ import classNames from "classnames";
 import Image from "next/image";
 import CurrentSectionContext from "context/CurrentSection";
 import { MUSIC, SKILLS, PROJECTS, CONTACT } from "data";
+import { InfiniteLoop } from "components";
 import styles from "styles/pages/home.module.scss";
 
 export default function Home() {
@@ -101,13 +102,26 @@ export default function Home() {
           </div>
 
           {!!MUSIC?.length && (
-            <div className={styles.music}>
+            <div id="music" className={styles.music}>
               <h3>CURRENTLY CODING TO</h3>
-              <ul>
-                {MUSIC.map(({ artist = "", album = "", image = "" }) => (
-                  <li key={artist}>{artist}</li>
+              <InfiniteLoop className={styles.music_wrapper}>
+                {MUSIC.map(({ artist = "", album = "", image = "", url }) => (
+                  <div
+                    key={album}
+                    className={styles.album}
+                    title={`"${album}" by ${artist}`}
+                  >
+                    <a href={url} target="_blank" rel="noreferrer">
+                      <Image
+                        src={image}
+                        width={400}
+                        height={400}
+                        alt={`"${album}" by ${artist}`}
+                      />
+                    </a>
+                  </div>
                 ))}
-              </ul>
+              </InfiniteLoop>
             </div>
           )}
         </section>

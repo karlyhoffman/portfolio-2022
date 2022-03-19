@@ -133,9 +133,18 @@ ul.grid {
 }
 
 .d-mobile {
+  display: block;
 
   @media screen and (min-width: $desktop) {
     display: none;
+  }
+}
+
+.d-desktop {
+  display: none;
+
+  @media screen and (min-width: $desktop) {
+    display: block;
   }
 }
 

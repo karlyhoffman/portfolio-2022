@@ -172,21 +172,22 @@
             text-align: center;
           }
 
-          ul {
-            white-space: nowrap;
+          .album {
+            display: block;
+            position: relative;
             overflow: hidden;
+            padding: 10px 5px;
+            background-color: $white;
 
-            li {
-              display: inline-block;
-              width: 20vw;
-              height: 20vw;
-              overflow: hidden;
-              margin: 10px 0 10px 10px;
-              background-color: $black;
+            a {
+              display: block;
+              position: relative;
+              width: 120px;
+              height: 120px;
 
               @media screen and (min-width: $desktop) {
-                width: 12vw;
-                height: 12vw;
+                width: 250px;
+                height: 250px;
               }
             }
           }
