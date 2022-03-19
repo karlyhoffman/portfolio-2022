@@ -5,6 +5,13 @@ class SkillsCategory {
   }
 }
 
+class Tool {
+  constructor({ name, url }) {
+    this.name = name;
+    this.url = url;
+  }
+}
+
 const SKILLS = {
   primary: [
     new SkillsCategory({
@@ -21,18 +28,16 @@ const SKILLS = {
       skills: ["ES6+", "React", "Next.js", "GSAP"],
     }),
   ],
-  secondary: [
-    new SkillsCategory({
-      categoryName: "Tools I Like to Use",
-      skills: [
-        "Adobe Creative Suite",
-        "Figma",
-        "Visual Studio Code",
-        "Vercel",
-        "Jira",
-        "Squoosh",
-      ],
+  tools: [
+    new Tool({ name: "Figma", url: "https://www.figma.com/" }),
+    new Tool({
+      name: "CSS Debugger",
+      url: "https://www.freecodecamp.org/news/heres-my-favorite-weird-trick-to-debug-css-88529aa5a6a3/",
     }),
+    new Tool({ name: "Adobe Creative Suite", url: "https://www.adobe.com/" }),
+    new Tool({ name: "Squoosh", url: "https://squoosh.app/" }),
+    new Tool({ name: "Jira", url: "https://www.atlassian.com/software/jira" }),
+    new Tool({ name: "Vercel", url: "https://vercel.com/" }),
   ],
 };
 

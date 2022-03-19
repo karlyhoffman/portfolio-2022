@@ -1,114 +1,173 @@
-@use '../variables/colors' as *;
-@use '../variables/layout' as *;
+@use '../variables/colors'as *;
+@use '../variables/layout'as *;
 
 #home {
   display: flex;
   justify-content: space-between;
 
   aside {
-    display: block;
-    position: relative;
-    width: $aside-width;
-    font-size: 5vw;
-    font-weight: bold;
-    text-align: center;
+    display: none;
 
-    ul {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+    @media screen and (min-width: $desktop) {
+      display: block;
       position: relative;
-      height: 100vh;
-      position: sticky;
-      top: $border-width;
+      width: $aside-width;
+      font-size: 8.25vmin;
+      font-weight: bold;
+      text-align: center;
 
-      li {
-        opacity: 0.3;
+      ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        height: 100vh;
+        position: sticky;
+        top: $border-width;
 
-        &.active {
-          opacity: 1;
+        li {
+          opacity: 0.3;
+          line-height: 0.95;
+
+          &.active {
+            opacity: 1;
+          }
         }
       }
     }
   }
 
   main {
-    width: $main-width;
+    display: block;
+    width: 100%;
+
+    @media screen and (min-width: $desktop) {
+      width: $main-width;
+    }
 
     section {
       display: block;
       position: relative;
 
       &:not(.hero) {
-        margin-bottom: $section-y-margin;
-      }
+        margin-bottom: 60px;
 
-      &:not(.contact) {
-        border-bottom: $border;
+        @media screen and (min-width: $desktop) {
+          margin-bottom: $section-y-margin;
+        }
       }
 
       &.hero {
+        overflow: hidden;
 
-        h2 {
+        .title {
           display: flex;
           flex-direction: column;
-          justify-content: space-between;
-          position: sticky;
-          top: $border-width;
-          height: 100vh;
-          vertical-align: middle;
+          justify-content: center;
+          align-items: center;
+          position: relative;
+          width: 100%;
+          height: calc(100vh - 75px); // 75px = mobile navbar
 
-          & > span {
+          @media screen and (min-width: $desktop) {
+            height: calc(100vh - #{$border-width});
+          }
+
+          div {
+            width: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 33.33%;
+            height: 25%;
+            border-bottom: $border;
+
+            @media screen and (min-width: $desktop) {
+              height: 33.33%;
+            }
 
             &:nth-child(1) {
-              font-size: 15.25vw;
+              // karly
+              font-size: 15vw;
+
+              @media screen and (min-width: $desktop) {
+                display: none;
+              }
             }
 
             &:nth-child(2) {
-              position: relative;
-              border-top: $border;
-              border-bottom: $border;
-              white-space: nowrap;
-              overflow: hidden;
+              // developer
+              font-size: 21vw;
 
-              span {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                font-size: 13vw;
-
-                &::before,
-                &::after {
-                  content: attr(data-year);
-                }
+              @media screen and (min-width: $desktop) {
+                font-size: 15.25vw;
               }
             }
 
             &:nth-child(3) {
-              font-size: 15.6vw;
+              // year
+              position: relative;
+              font-size: 17vw;
+              overflow: hidden;
+
+              @media screen and (min-width: $desktop) {
+                font-size: 13vw;
+              }
+
+              span {
+                white-space: nowrap;
+              }
+            }
+
+            &:nth-child(4) {
+              // portfolio
+              font-size: 21vw;
+
+              @media screen and (min-width: $desktop) {
+                font-size: 15.6vw;
+              }
+            }
+
+            // short screens
+            &:nth-child(2),
+            &:nth-child(3),
+            &:nth-child(4) {
+              @media screen and (max-height: 700px) {
+                font-size: 30vmin;
+              }
             }
           }
         }
       }
 
       &.about {
+        border-bottom: $border;
 
         .intro_text {
-          padding: $section-y-margin $section-x-padding;
+          padding: 60px 30px;
+
+          @media screen and (min-width: $desktop) {
+            padding: $section-y-margin $section-x-padding;
+          }
 
           p:not(:last-child) {
             margin-bottom: 3vw;
           }
+
+          a {
+            text-decoration: underline;
+            transition: 200ms ease-in-out 0s;
+            transition-property: background-color, color, text-decoration;
+
+            &:hover {
+              text-decoration: none;
+              background-color: $black;
+              color: $white;
+            }
+          }
         }
 
         .music {
-
           h3 {
             text-align: center;
           }
@@ -119,22 +178,22 @@
 
             li {
               display: inline-block;
-              width: 10vw;
-              height: 10vw;
+              width: 20vw;
+              height: 20vw;
               overflow: hidden;
               margin: 10px 0 10px 10px;
-              background-color: #222;
+              background-color: $black;
+
+              @media screen and (min-width: $desktop) {
+                width: 10vw;
+                height: 10vw;
+              }
             }
           }
         }
       }
 
       &.skills {
-
-        ul {
-          padding: $section-x-padding;
-        }
-
         .primary {
           display: flex;
 
@@ -144,20 +203,15 @@
             &:nth-of-type(even) {
               text-align: right;
             }
+
+            ul {
+              padding: $section-x-padding;
+            }
           }
         }
 
-        .secondary ul{
-          display: flex;
-          flex-wrap: wrap;
-
-          li {
-            flex: 1 1 50%;
-
-            &:nth-of-type(even) {
-              text-align: right;
-            }
-          }
+        .tools h3 {
+          text-align: center;
         }
       }
 
@@ -165,7 +219,6 @@
         border-bottom: none;
 
         .project {
-
           h3 {
             display: block;
             width: 100%;
@@ -180,10 +233,11 @@
 
           .tech {
             display: flex;
-            align-content: center;
+            align-items: center;
             border-bottom: $border;
 
-            h4, ul {
+            h4,
+            ul {
               line-height: 0.825;
             }
 
@@ -193,15 +247,23 @@
             }
 
             ul {
-              transform: translateY(-10%);
+              transform: translateY(-16%);
 
               li {
                 display: inline-block;
                 position: relative;
-                font-size: 1.6vw;
+                font-size: 2.7vw;
+
+                @media screen and (min-width: $desktop) {
+                  font-size: 1.6vw;
+                }
 
                 &:not(:last-of-type) {
-                  margin-right: 0.5vw;
+                  margin-right: 1vw;
+
+                  @media screen and (min-width: $desktop) {
+                    margin-right: 0.5vw;
+                  }
 
                   &::after {
                     content: " • ";
@@ -210,7 +272,7 @@
               }
             }
           }
-          
+
           .demo {
             padding: $section-x-padding;
 
@@ -223,11 +285,12 @@
           }
         }
 
-        .more {
-          
-          .sm_text {
-            font-size: 3vw;
-            font-weight: bold;
+        .more .sm_text {
+          font-size: 3.7vw;
+          font-weight: bold;
+
+          @media screen and (min-width: $desktop) {
+            font-size: 2.75vw;
           }
         }
       }

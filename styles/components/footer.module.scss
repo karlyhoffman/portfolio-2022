@@ -1,4 +1,4 @@
-@use '../variables/layout';
+@use '../variables/layout' as *;
 
 .footer {
   display: flex;
@@ -9,17 +9,29 @@
 
   .col_left,
   .col_right {
-    border-top: layout.$border;
+    width: 50%;
+    border-top: $border;
+    margin-bottom: 65px; // mobile navbar 
     padding: 15px 5px;
+
+    @media screen and (min-width: $desktop) {
+      margin-bottom: 0;
+    }
   }
 
   .col_left {
-    width: layout.$aside-width;
-    text-align: center;
+
+    @media screen and (min-width: $desktop) {
+      width: $aside-width;
+      text-align: center;
+    }
   }
 
   .col_right {
-    width: layout.$main-width;
     text-align: right;
+
+    @media screen and (min-width: $desktop) {
+      width: $main-width;
+    }
   }
 }

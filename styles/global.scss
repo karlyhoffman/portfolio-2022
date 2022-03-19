@@ -1,6 +1,6 @@
-@use 'variables/colors';
-@use 'variables/fonts';
-@use 'variables/layout';
+@use 'variables/colors' as *;
+@use 'variables/fonts' as *;
+@use 'variables/layout' as *;
 
 *,
 *::before,
@@ -9,7 +9,7 @@
 }
 
 html {
-  background-color: colors.$black;
+  background-color: $black;
   margin: 0;
   padding: 0;
 }
@@ -17,13 +17,17 @@ html {
 body {
   display: block;
   position: relative;
-  background-color: colors.$white;
-  color: colors.$black;
-  font-family: fonts.$fjalla-one;
-  font-size: 3vw;
+  background-color: $white;
+  color: $black;
+  font-family: $fjalla-one;
+  font-size: 22px;
   line-height: 1;
   margin: 0;
-  padding: layout.$border-width;
+  padding: $border-width;
+
+  @media screen and (min-width: $desktop) {
+    font-size: 3vw;
+  }
   
   &::before {
     content: "";
@@ -33,7 +37,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    border: layout.$border;
+    border: $border;
     pointer-events: none;
     z-index: 3;
   }
@@ -49,20 +53,33 @@ h3, .h3, h4 {
 }
 
 h3, .h3 {
-  font-size: 7.75vw;
+  font-size: 11vw;
   line-height: 0.75;
-  padding-top: 0.525vw;
-  border-top: layout.$border;
-  border-bottom: layout.$border;
+  padding-top: 0.62vw;
+  border-top: $border;
+  border-bottom: $border;
 
   .lower {
-    font-size: 7vw;
+    font-size: 9.5vw;
     text-transform: none;
+  }
+
+  @media screen and (min-width: $desktop) {
+    font-size: 7.75vw;
+    padding-top: 0.525vw;
+
+    .lower {
+      font-size: 7vw;
+    }
   }
 }
 
 h4 {
-  font-size: 3.5vw;
+  font-size: 4vw;
+
+  @media screen and (min-width: $desktop) {
+    font-size: 3.5vw;
+  }
 }
 
 p {
@@ -90,26 +107,35 @@ ul.grid {
   li {
     flex: 1 1 50%;
     text-align: center;
-    border-bottom: layout.$border;
+    border-bottom: $border;
 
     &:nth-of-type(odd) {
-      border-right: layout.$border;
+      border-right: $border;
     }
 
     a {
-      display: block;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       position: relative;
       height: 100%;
       width: 100%;
       transition: 200ms ease-in-out 0s;
       transition-property: background-color, color;
-      padding: layout.$section-x-padding;
+      padding: $section-x-padding;
 
       &:hover {
-        background-color: colors.$black;
-        color: colors.$white;
+        background-color: $black;
+        color: $white;
       }
     }
+  }
+}
+
+.d-mobile {
+
+  @media screen and (min-width: $desktop) {
+    display: none;
   }
 }
 

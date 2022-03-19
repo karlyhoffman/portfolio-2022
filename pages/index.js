@@ -22,10 +22,17 @@ export default function Home() {
             <a href="#about">WHO I AM</a>
           </li>
           <li className={classNames(styles.skills, styles.active)}>
-            <a href="#skills">WHAT I KNOW</a>
+            <a href="#skills">
+              WHAT
+              <br />I KNOW
+            </a>
           </li>
           <li className={styles.projects}>
-            <a href="#work">WHAT I&apos;VE BUILT</a>
+            <a href="#work">
+              WHAT I&apos;VE
+              <br />
+              BUILT
+            </a>
           </li>
           <li className={styles.contact}>
             <a href="#contact">
@@ -39,15 +46,28 @@ export default function Home() {
 
       <main>
         <section id="home" className={styles.hero}>
-          <h1 className="sr-only">Karly Hoffman</h1>
-          <h2>
-            <span>DEVELOPER</span>
-            <span className="infinite-loop">
-              <span data-year={currentYear}> • {currentYear} • </span>
-              {/* <span aria-hidden="true">{currentYear}</span> */}
-            </span>
-            <span>PORTFOLIO</span>
-          </h2>
+          <h1 className="sr-only">
+            Karly Hoffman&apos;s {currentYear} Developer Portfolio
+          </h1>
+          <div className={styles.title} aria-hidden="true">
+            <div>
+              <span>KARLY HOFFMAN</span>
+            </div>
+            <div>
+              <span>DEVELOPER</span>
+            </div>
+            <div className="infinite-loop">
+              <span>
+                {currentYear} • {currentYear} •{" "}
+              </span>
+              <span>
+                {currentYear} • {currentYear} •{" "}
+              </span>
+            </div>
+            <div>
+              <span>PORTFOLIO</span>
+            </div>
+          </div>
         </section>
 
         <section id="about" className={styles.about}>
@@ -121,20 +141,19 @@ export default function Home() {
               ))}
             </div>
           )}
-          {!!SKILLS.secondary?.length && (
-            <div className={styles.secondary}>
-              {SKILLS.secondary.map(({ categoryName = "", skills = [] }) => (
-                <div key={categoryName}>
-                  <h3>{categoryName}</h3>
-                  {!!skills?.length && (
-                    <ul>
-                      {skills.map((skill = "") => (
-                        <li key={skill}>{skill}</li>
-                      ))}
-                    </ul>
-                  )}
-                </div>
-              ))}
+
+          {!!SKILLS.tools?.length && (
+            <div className={styles.tools}>
+              <h3>Tools I Use</h3>
+              <ul className="grid">
+                {SKILLS.tools.map(({ name, url }) => (
+                  <li key={name}>
+                    <a href={url} target="_blank" rel="noreferrer">
+                      {name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
             </div>
           )}
         </section>
@@ -158,8 +177,10 @@ export default function Home() {
                   </div>
                 )}
                 <div className={styles.demo}>
-                  {/* {PROJECT_DEMOS[id]} */}
-                  <div className={styles.temp} />
+                  <a href={url} target="_blank" rel="noreferrer">
+                    {/* {PROJECT_DEMOS[id]} */}
+                    <div className={styles.temp} />
+                  </a>
                 </div>
               </div>
             )

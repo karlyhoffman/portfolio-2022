@@ -1,44 +1,53 @@
-@use '../variables/colors';
-@use '../variables/layout';
+@use '../variables/colors' as *;
+@use '../variables/layout' as *;
 
 .navigation {
   display: block;
   position: fixed;
-  top: 0;
-  left: calc(#{layout.$aside-width} + #{layout.$border-width});
+  left: 0;
+  right: 0;
   bottom: 0;
-  width: layout.$nav-width;
-  border: layout.$border;
+  border: $border;
+  background-color: $white;
   z-index: 2;
+
+  @media screen and (min-width: $desktop) {
+    top: 0;
+    left: calc(#{$aside-width} + #{$border-width});
+    right: auto;
+    width: $nav-width;
+  }
 
   nav {
     height: 100%;
 
     ul {
       display: flex;
-      flex-direction: column;
       justify-content: space-between;
       align-items: center;
-      height: 100%;
-      list-style: none;
-      font-size: 1.1vw;
-      margin: 0;
       padding: 5px;
+
+      @media screen and (min-width: $desktop) {
+        flex-direction: column;
+        height: 100%;
+      }
 
       li {
         display: block;
-        width: 100%;
         border-radius: 1px;
+        font-size: 5vw;
         text-align: center;
-        padding: 1vh 0;
+        padding: 1.25vh 2vw 1vh;
 
-        &.active {
-          background-color: colors.$black;
-          color: colors.$white;
+        @media screen and (min-width: $desktop) {
+          width: 100%;
+          font-size: 1.1vw;
+          padding: 1vh 0;
         }
 
-        a {
-          text-decoration: none;
+        &.active {
+          background-color: $black;
+          color: $white;
         }
       }
     }
