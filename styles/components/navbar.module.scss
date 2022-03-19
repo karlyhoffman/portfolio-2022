@@ -30,6 +30,7 @@
       @media screen and (min-width: $desktop) {
         flex-direction: column;
         height: 100%;
+        padding: 0.5vw;
       }
 
       li {
@@ -45,8 +46,8 @@
 
         @media screen and (min-width: $desktop) {
           width: 100%;
-          font-size: 1.1vw;
-          padding: 1vh 0;
+          font-size: 1.75vw;
+          padding: 1.5vh 0.2vw 1.25vh;
         }
 
         &.active {

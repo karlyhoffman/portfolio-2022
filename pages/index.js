@@ -14,36 +14,21 @@ export default function Home() {
       <aside>
         <ul>
           <li className={classNames({ [styles.active]: section === "home" })}>
-            <a href="#home">
-              KARLY
-              <br />
-              HOFFMAN
-            </a>
+            <a href="#home">KARLY HOFFMAN</a>
           </li>
           <li className={classNames({ [styles.active]: section === "about" })}>
             <a href="#about">WHO I AM</a>
           </li>
           <li className={classNames({ [styles.active]: section === "skills" })}>
-            <a href="#skills">
-              WHAT
-              <br />I KNOW
-            </a>
+            <a href="#skills">WHAT I KNOW</a>
           </li>
           <li className={classNames({ [styles.active]: section === "work" })}>
-            <a href="#work">
-              WHAT I&apos;VE
-              <br />
-              BUILT
-            </a>
+            <a href="#work">WHAT I&apos;VE BUILT</a>
           </li>
           <li
             className={classNames({ [styles.active]: section === "contact" })}
           >
-            <a href="#contact">
-              HOW TO
-              <br />
-              REACH ME
-            </a>
+            <a href="#contact">HOW TO REACH ME</a>
           </li>
         </ul>
       </aside>

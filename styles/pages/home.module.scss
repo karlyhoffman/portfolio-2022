@@ -12,23 +12,26 @@
       display: block;
       position: relative;
       width: $aside-width;
-      font-size: 8.25vmin;
+      font-size: 9.5vmin;
       font-weight: bold;
       text-align: center;
 
       ul {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        height: 100vh;
+        display: block;
         position: sticky;
         top: $border-width;
+        height: 100vh;
 
         li {
-          opacity: 0.3;
+          display: block;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%) rotate(-90deg);
           line-height: 0.95;
+          white-space: nowrap;
+          padding-top: 0.5vw;
+          opacity: 0;
 
           &.active {
             opacity: 1;
@@ -68,7 +71,7 @@
           align-items: center;
           position: relative;
           width: 100%;
-          height: calc(100vh - 75px); // 75px = mobile navbar
+          height: calc(100vh - #{$border-width} - 75px); // 75px = mobile navbar
 
           @media screen and (min-width: $desktop) {
             height: calc(100vh - #{$border-width});
@@ -98,9 +101,11 @@
             &:nth-child(2) {
               // developer
               font-size: 21vw;
+              padding-top: 1.5vw;
 
               @media screen and (min-width: $desktop) {
-                font-size: 15.25vw;
+                font-size: 17vw;
+                padding-top: 1.1vw;
               }
             }
 
@@ -108,10 +113,12 @@
               // year
               position: relative;
               font-size: 17vw;
+              padding-top: 1.5vw;
               overflow: hidden;
 
               @media screen and (min-width: $desktop) {
-                font-size: 13vw;
+                font-size: 15vw;
+                padding-top: 1.25vw;
               }
 
               span {
@@ -121,19 +128,12 @@
 
             &:nth-child(4) {
               // portfolio
-              font-size: 21vw;
+              font-size: 21.3vw;
+              padding-top: 1.6vw;
 
               @media screen and (min-width: $desktop) {
-                font-size: 15.6vw;
-              }
-            }
-
-            // short screens
-            &:nth-child(2),
-            &:nth-child(3),
-            &:nth-child(4) {
-              @media screen and (max-height: 650px) {
-                font-size: 30vmin;
+                font-size: 17.3vw;
+                padding-top: 1.5vw;
               }
             }
           }
@@ -185,8 +185,8 @@
               background-color: $black;
 
               @media screen and (min-width: $desktop) {
-                width: 10vw;
-                height: 10vw;
+                width: 12vw;
+                height: 12vw;
               }
             }
           }
@@ -243,10 +243,12 @@
               li {
                 display: inline-block;
                 position: relative;
-                font-size: 2.7vw;
+                font-size: 4vw;
+                padding-top: 1.75vw;
 
                 @media screen and (min-width: $desktop) {
                   font-size: 1.6vw;
+                  padding-top: 0.25vw;
                 }
 
                 &:not(:last-of-type) {
@@ -287,7 +289,10 @@
       }
 
       &.contact {
-        min-height: 50vh; // in order to trigger nav menu change
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: calc(100vh - #{$section-y-margin * 2} - 78px);
       }
     }
   }
