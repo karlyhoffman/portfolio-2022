@@ -236,18 +236,9 @@
             align-items: center;
             border-bottom: $border;
 
-            h4,
-            ul {
-              line-height: 0.825;
-            }
-
-            h4 {
-              transform: translateY(5%);
-              margin-right: 0.75vw;
-            }
-
             ul {
               transform: translateY(-16%);
+              padding-left: 5px;
 
               li {
                 display: inline-block;

@@ -8,7 +8,13 @@ function Footer() {
         &copy;{new Date().getFullYear() || ""} Karly Hoffman
       </div>
       <div className={styles.col_right}>
-        <a>View Source Code</a>
+        <a
+          href="https://github.com/karlyhoffman/portfolio-2022"
+          target="_blank"
+          rel="noreferrer"
+        >
+          View Source Code
+        </a>
       </div>
     </footer>
   );

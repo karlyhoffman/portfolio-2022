@@ -8,8 +8,6 @@ const SECTIONS = ["home", "about", "skills", "work", "contact"];
 function Navbar() {
   const { section } = useContext(CurrentSectionContext);
 
-  console.log(section);
-
   return (
     <header className={styles.navigation}>
       <nav>

@@ -172,7 +172,6 @@ export default function Home() {
                 </a>
                 {!!technologies?.length && (
                   <div className={styles.tech}>
-                    <h4>Technologies Used:</h4>
                     <ul>
                       {technologies.map((tech) => (
                         <li key={tech}>{tech}</li>

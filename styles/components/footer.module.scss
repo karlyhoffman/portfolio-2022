@@ -1,3 +1,4 @@
+@use '../variables/colors' as *;
 @use '../variables/layout' as *;
 
 .footer {
@@ -32,6 +33,20 @@
 
     @media screen and (min-width: $desktop) {
       width: $main-width;
+      padding-right: 1vw;
+    }
+
+    a {
+      text-decoration: underline;
+      transition: 200ms ease-in-out 0s;
+      transition-property: background-color, color, text-decoration;
+      padding: 2px 5px;
+
+      &:hover {
+        text-decoration: none;
+        background-color: $black;
+        color: $white;
+      }
     }
   }
 }
