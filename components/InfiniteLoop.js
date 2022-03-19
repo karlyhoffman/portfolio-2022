@@ -7,7 +7,7 @@ import styles from "styles/components/infinite-loop.module.scss";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const InfiniteLoop = ({ children, className }) => {
+const InfiniteLoop = ({ children, className, reverse = false }) => {
   const container = useRef();
   const [containerHeight, setContainerHeight] = useState();
   const itemsRef = useRef([]);
@@ -45,13 +45,19 @@ const InfiniteLoop = ({ children, className }) => {
     setContainerHeight(height);
 
     /* Animate Items */
+    const modifierFunc = reverse
+      ? gsap.utils.unitize((x) =>
+          parseInt(x) < 0 ? (parseInt(x) % width) + width : parseInt(x)
+        )
+      : gsap.utils.unitize((x) => parseFloat(x) % width); // force x value to be between 0 and total width using modulus
+
     const moveItems = gsap.to(itemsRef.current, {
       duration: itemsRef.current.length * 5,
       repeat: -1,
       ease: "none",
-      x: `+=${width}`,
+      x: `${reverse ? "-" : "+"}=${width}`,
       modifiers: {
-        x: gsap.utils.unitize((x) => parseFloat(x) % width), // force x value to be between 0 and total width using modulus
+        x: modifierFunc,
       },
     });
 
