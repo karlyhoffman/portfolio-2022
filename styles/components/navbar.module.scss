@@ -35,8 +35,12 @@
       li {
         display: block;
         border-radius: 1px;
+        color: $black;
         font-size: 5vw;
+        text-transform: uppercase;
         text-align: center;
+        transition: 400ms ease-in-out 0s;
+        transition-property: background-color, color;
         padding: 1.25vh 2vw 1vh;
 
         @media screen and (min-width: $desktop) {
@@ -48,6 +52,10 @@
         &.active {
           background-color: $black;
           color: $white;
+        }
+
+        a {
+          color: inherit;
         }
       }
     }

@@ -1,11 +1,14 @@
+import { CurrentSectionProvider } from "context/CurrentSection";
 import { Layout } from "components";
 import "styles/global.scss";
 
 function MyApp({ Component, pageProps }) {
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <CurrentSectionProvider>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </CurrentSectionProvider>
   );
 }
 

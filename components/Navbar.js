@@ -1,25 +1,27 @@
+import { useContext } from "react";
+import classNames from "classnames";
+import CurrentSectionContext from "context/CurrentSection";
 import styles from "styles/components/navbar.module.scss";
 
+const SECTIONS = ["home", "about", "skills", "work", "contact"];
+
 function Navbar() {
+  const { section } = useContext(CurrentSectionContext);
+
+  console.log(section);
+
   return (
     <header className={styles.navigation}>
       <nav>
         <ul>
-          <li className={styles.active}>
-            <a href="#hero">HOME</a>
-          </li>
-          <li>
-            <a href="#about">ABOUT</a>
-          </li>
-          <li>
-            <a href="#skills">SKILLS</a>
-          </li>
-          <li>
-            <a href="#work">WORK</a>
-          </li>
-          <li>
-            <a href="#contact">CONTACT</a>
-          </li>
+          {SECTIONS.map((id) => (
+            <li
+              key={id}
+              className={classNames({ [styles.active]: section === id })}
+            >
+              <a href={`#${id}`}>{id}</a>
+            </li>
+          ))}
         </ul>
       </nav>
     </header>

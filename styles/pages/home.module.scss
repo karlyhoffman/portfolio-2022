@@ -132,7 +132,7 @@
             &:nth-child(2),
             &:nth-child(3),
             &:nth-child(4) {
-              @media screen and (max-height: 700px) {
+              @media screen and (max-height: 650px) {
                 font-size: 30vmin;
               }
             }
@@ -293,6 +293,10 @@
             font-size: 2.75vw;
           }
         }
+      }
+
+      &.contact {
+        min-height: 50vh; // in order to trigger nav menu change
       }
     }
   }

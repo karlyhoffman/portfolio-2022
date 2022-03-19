@@ -1,40 +1,44 @@
-import { Fragment } from "react";
+import { useContext } from "react";
 import classNames from "classnames";
 import Image from "next/image";
+import CurrentSectionContext from "context/CurrentSection";
 import { MUSIC, SKILLS, PROJECTS, CONTACT } from "data";
 import styles from "styles/pages/home.module.scss";
 
 export default function Home() {
+  const { section } = useContext(CurrentSectionContext);
   const currentYear = new Date().getFullYear() || "";
 
   return (
     <div id={styles.home}>
       <aside>
         <ul>
-          <li className={styles.hero}>
+          <li className={classNames({ [styles.active]: section === "home" })}>
             <a href="#home">
               KARLY
               <br />
               HOFFMAN
             </a>
           </li>
-          <li className={styles.about}>
+          <li className={classNames({ [styles.active]: section === "about" })}>
             <a href="#about">WHO I AM</a>
           </li>
-          <li className={classNames(styles.skills, styles.active)}>
+          <li className={classNames({ [styles.active]: section === "skills" })}>
             <a href="#skills">
               WHAT
               <br />I KNOW
             </a>
           </li>
-          <li className={styles.projects}>
+          <li className={classNames({ [styles.active]: section === "work" })}>
             <a href="#work">
               WHAT I&apos;VE
               <br />
               BUILT
             </a>
           </li>
-          <li className={styles.contact}>
+          <li
+            className={classNames({ [styles.active]: section === "contact" })}
+          >
             <a href="#contact">
               HOW TO
               <br />
