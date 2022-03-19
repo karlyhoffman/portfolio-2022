@@ -2,6 +2,7 @@ import { useRef, useState, useEffect, Children } from "react";
 import classNames from "classnames";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import useWindowSize from "hooks/useWindowSize";
 import styles from "styles/components/infinite-loop.module.scss";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -11,37 +12,54 @@ const InfiniteLoop = ({ children, className }) => {
   const [containerHeight, setContainerHeight] = useState();
   const itemsRef = useRef([]);
   const items = Children.toArray(children);
+  const { width: windowWidth } = useWindowSize();
 
   useEffect(() => {
+    const animationID = Date.now();
     const timeline = gsap.timeline({ paused: false });
 
     /* Set Starting Positions */
-    setContainerHeight(container.current.getBoundingClientRect().height);
-    const totalLength = itemsRef.current
-      .map((item) => item.offsetWidth)
-      .reduce((accumulator, currentValue, i) => {
-        const currentItem = itemsRef.current[i];
-        gsap.set(currentItem, {
-          x: accumulator,
+    const containerDimensions = itemsRef.current.reduce(
+      (acc, item) => {
+        gsap.set(item, {
+          x: acc.width,
           position: "absolute",
         });
-        return accumulator + currentValue;
-      }, 0);
+
+        if (item.offsetHeight > acc.height) {
+          return {
+            height: item.offsetHeight,
+            width: acc.width + item.offsetWidth,
+          };
+        }
+
+        return {
+          ...acc,
+          width: acc.width + item.offsetWidth,
+        };
+      },
+      { width: 0, height: 0 }
+    );
+
+    const { width, height } = containerDimensions;
+    setContainerHeight(height);
 
     /* Animate Items */
     const moveItems = gsap.to(itemsRef.current, {
       duration: itemsRef.current.length * 5,
       repeat: -1,
       ease: "none",
-      x: `+=${totalLength}`,
+      x: `+=${width}`,
       modifiers: {
-        x: gsap.utils.unitize((x) => parseFloat(x) % totalLength), // force x value to be between 0 and totalLength using modulus
+        x: gsap.utils.unitize((x) => parseFloat(x) % width), // force x value to be between 0 and total width using modulus
       },
     });
+
     timeline.add(moveItems);
 
-    // Increase rotation speed on scroll
+    /* Increase rotation speed on scroll */
     ScrollTrigger.create({
+      id: animationID,
       trigger: "body",
       start: "top top",
       end: "bottom bottom",
@@ -57,7 +75,12 @@ const InfiniteLoop = ({ children, className }) => {
         });
       },
     });
-  }, []);
+
+    return () => {
+      timeline.pause(0).kill(true);
+      ScrollTrigger.getById(animationID).kill(true);
+    };
+  }, [windowWidth]);
 
   useEffect(() => {
     itemsRef.current = itemsRef.current.slice(0, items.length);

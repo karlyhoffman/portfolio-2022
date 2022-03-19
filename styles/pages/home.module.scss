@@ -182,12 +182,12 @@
             a {
               display: block;
               position: relative;
-              width: 120px;
-              height: 120px;
+              width: 20vw;
+              height: 20vw;
 
               @media screen and (min-width: $desktop) {
-                width: 250px;
-                height: 250px;
+                width: 12vw;
+                height: 12vw;
               }
             }
           }
