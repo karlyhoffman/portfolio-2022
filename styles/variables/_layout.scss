@@ -6,5 +6,7 @@ $border: $border-width solid colors.$black;
 $aside-width: 25vw;
 $nav-width: 6.5vw; 
 
+$section-y-margin: 100px;
+$section-x-padding: 2vw;
 
 $main-width: calc(100% - #{$aside-width} - #{$nav-width} - #{$border-width * 0});

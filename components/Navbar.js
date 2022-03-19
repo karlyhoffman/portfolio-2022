@@ -5,11 +5,21 @@ function Navbar() {
     <header className={styles.navigation}>
       <nav>
         <ul>
-          <li className={styles.active}>HOME</li>
-          <li>ABOUT</li>
-          <li>SKILLS</li>
-          <li>WORK</li>
-          <li>CONTACT</li>
+          <li className={styles.active}>
+            <a href="#hero">HOME</a>
+          </li>
+          <li>
+            <a href="#about">ABOUT</a>
+          </li>
+          <li>
+            <a href="#skills">SKILLS</a>
+          </li>
+          <li>
+            <a href="#work">WORK</a>
+          </li>
+          <li>
+            <a href="#contact">CONTACT</a>
+          </li>
         </ul>
       </nav>
     </header>

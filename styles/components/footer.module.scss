@@ -4,6 +4,7 @@
   display: flex;
   justify-content: space-between;
   position: relative;
+  font-size: 1rem;
   z-index: 1;
 
   .col_left,
@@ -14,9 +15,11 @@
 
   .col_left {
     width: layout.$aside-width;
+    text-align: center;
   }
 
   .col_right {
     width: layout.$main-width;
+    text-align: right;
   }
 }
