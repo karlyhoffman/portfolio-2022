@@ -8,12 +8,14 @@ import {
   HeadlineReveal,
   ProjectOutsideAcademy,
   ProjectGAN,
+  ProjectMcD,
 } from "components";
 import styles from "styles/pages/home.module.scss";
 
 const PROJECT_DEMOS = {
   "outside-academy": <ProjectOutsideAcademy />,
   gan: <ProjectGAN />,
+  "mcd-visid": <ProjectMcD />,
 };
 
 export default function Home() {

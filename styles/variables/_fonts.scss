@@ -14,5 +14,14 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Speedee-Bold';
+  src: url('/fonts/Speedee-Bold.woff2') format('woff2'),
+       url('/fonts/Speedee-Bold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 $fjalla-one: 'Fjalla One', sans-serif;
 $geograph-bold: 'Geograph-Bold', Helvetica, Arial, sans-serif;
+$speedee-bold: 'Speedee-Bold', Arial, sans-serif;

@@ -68,7 +68,6 @@ const SmoothScrollElement = dynamic(
             ease: "none",
             scrollTrigger: {
               trigger: el.current,
-              toggleActions: "play pause resume reset",
               start: "top bottom+=5%",
               end: "+=125%",
               scrub,
