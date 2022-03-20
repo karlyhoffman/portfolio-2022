@@ -3,8 +3,12 @@ import classNames from "classnames";
 import Image from "next/image";
 import CurrentSectionContext from "context/CurrentSection";
 import { MUSIC, SKILLS, PROJECTS, CONTACT } from "data";
-import { InfiniteLoop } from "components";
+import { InfiniteLoop, ProjectOutsideAcademy } from "components";
 import styles from "styles/pages/home.module.scss";
+
+const PROJECT_DEMOS = {
+  "outside-academy": <ProjectOutsideAcademy />,
+};
 
 export default function Home() {
   const { section } = useContext(CurrentSectionContext);
@@ -180,8 +184,7 @@ export default function Home() {
                 )}
                 <div className={styles.demo}>
                   <a href={url} target="_blank" rel="noreferrer">
-                    {/* {PROJECT_DEMOS[id]} */}
-                    <div className={styles.temp} />
+                    {PROJECT_DEMOS[id]}
                   </a>
                 </div>
               </div>

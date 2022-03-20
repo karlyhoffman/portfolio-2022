@@ -1,5 +1,5 @@
-@use '../variables/colors'as *;
-@use '../variables/layout'as *;
+@use '../variables/colors' as *;
+@use '../variables/layout' as *;
 
 #home {
   display: flex;
@@ -263,13 +263,6 @@
 
           .demo {
             padding: $section-x-padding;
-
-            .temp {
-              display: block;
-              width: 100%;
-              height: 25vw;
-              background-color: $black;
-            }
           }
         }
 

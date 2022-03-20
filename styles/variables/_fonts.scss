@@ -1,9 +1,18 @@
 @font-face {
   font-family: 'Fjalla One';
-  src: url('/fonts/fjalla-one.woff2') format('woff2'),
-       url('/fonts/fjalla-one.woff') format('woff');
+  src: url('/fonts/Fjalla-One.woff2') format('woff2'),
+       url('/fonts/Fjalla-One.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Geograph-Bold';
+  src: url('/fonts/Geograph-Bold.woff2') format('woff2'),
+       url('/fonts/Geograph-Bold.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 
 $fjalla-one: 'Fjalla One', sans-serif;
+$geograph-bold: 'Geograph-Bold', Helvetica, Arial, sans-serif;

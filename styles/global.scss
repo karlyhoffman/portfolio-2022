@@ -47,14 +47,11 @@ h1, h2, h3, h4, h5, h6, p {
   margin: 0;
 }
 
-h3, .h3, h4 {
-  font-weight: normal;
-  text-transform: uppercase;
-}
-
 h3, .h3 {
   font-size: 11vw;
   line-height: 0.75;
+  font-weight: normal;
+  text-transform: uppercase;
   padding-top: 0.62vw;
   border-top: $border;
   border-bottom: $border;
@@ -71,14 +68,6 @@ h3, .h3 {
     .lower {
       font-size: 7vw;
     }
-  }
-}
-
-h4 {
-  font-size: 4vw;
-
-  @media screen and (min-width: $desktop) {
-    font-size: 3.5vw;
   }
 }
 
