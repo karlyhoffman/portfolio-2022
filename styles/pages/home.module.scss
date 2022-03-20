@@ -214,6 +214,15 @@
         border-bottom: none;
 
         .project {
+          display: block;
+          border-bottom: $border;
+          margin-bottom: 50px;
+          overflow: hidden;
+
+          @media screen and (min-width: $desktop) {
+            margin-bottom: $section-y-margin;
+          }
+
           h3 {
             display: block;
             width: 100%;

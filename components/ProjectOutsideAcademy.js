@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import { useRef, useLayoutEffect } from "react";
 import dynamic from "next/dynamic";
 import Tilt from "react-parallax-tilt";

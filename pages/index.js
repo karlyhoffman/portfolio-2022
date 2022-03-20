@@ -3,11 +3,12 @@ import classNames from "classnames";
 import Image from "next/image";
 import CurrentSectionContext from "context/CurrentSection";
 import { MUSIC, SKILLS, PROJECTS, CONTACT } from "data";
-import { InfiniteLoop, ProjectOutsideAcademy } from "components";
+import { InfiniteLoop, ProjectOutsideAcademy, ProjectGAN } from "components";
 import styles from "styles/pages/home.module.scss";
 
 const PROJECT_DEMOS = {
   "outside-academy": <ProjectOutsideAcademy />,
+  gan: <ProjectGAN />,
 };
 
 export default function Home() {

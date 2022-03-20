@@ -1,0 +1,54 @@
+@use '../variables/layout' as *;
+
+.project_wrapper {
+  display: block;
+  position: relative;
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -$section-x-padding * 2;
+    left: -$section-x-padding;
+    right: -$section-x-padding;
+    bottom: -$section-x-padding * 2;
+    background-color: rgb(33, 39, 59);
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 15px;
+    grid-row-gap: 15px;
+    position: relative;
+    width: calc(100% - ($section-x-padding * 2));
+    max-width: calc((200px * 4) + (15px * 3));
+    margin: $section-x-padding auto;
+
+    .item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      aspect-ratio: 1;
+      background-color: rgb(42, 51, 76);
+
+      opacity: 0;
+      will-change: transform;
+
+      .img {
+        display: block;
+        position: relative;
+        width: 70%;
+        height: auto;
+        transform-origin: center center;
+        transition: width 400ms cubic-bezier(0.19, 1, 0.22, 1);
+      }
+
+      &:hover .img {
+        width: 65%;
+      }
+    }
+  }
+}
