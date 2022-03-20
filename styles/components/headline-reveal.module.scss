@@ -1,0 +1,11 @@
+.wrapper {
+  display: block;
+  position: relative;
+  overflow: hidden;
+
+  .content {
+    display: block;
+    position: relative;
+    transform: translateY(120%);
+  }
+}

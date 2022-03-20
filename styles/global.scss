@@ -48,13 +48,30 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 h3, .h3 {
+  position: relative;
   font-size: 11vw;
-  line-height: 0.75;
+  line-height: 1.45;
   font-weight: normal;
   text-transform: uppercase;
-  padding-top: 0.62vw;
-  border-top: $border;
-  border-bottom: $border;
+
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: $border-width;
+    background-color: $black;
+  }
+
+  &::before {
+    top: 0;
+  }
+
+  &::after {
+    bottom: 0;
+  }
 
   .lower {
     font-size: 9.5vw;
@@ -62,8 +79,8 @@ h3, .h3 {
   }
 
   @media screen and (min-width: $desktop) {
+    line-height: 1;
     font-size: 7.75vw;
-    padding-top: 0.525vw;
 
     .lower {
       font-size: 7vw;

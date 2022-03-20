@@ -3,7 +3,12 @@ import classNames from "classnames";
 import Image from "next/image";
 import CurrentSectionContext from "context/CurrentSection";
 import { MUSIC, SKILLS, PROJECTS, CONTACT } from "data";
-import { InfiniteLoop, ProjectOutsideAcademy, ProjectGAN } from "components";
+import {
+  InfiniteLoop,
+  HeadlineReveal,
+  ProjectOutsideAcademy,
+  ProjectGAN,
+} from "components";
 import styles from "styles/pages/home.module.scss";
 
 const PROJECT_DEMOS = {
@@ -108,7 +113,7 @@ export default function Home() {
 
           {!!MUSIC?.length && (
             <div id="music" className={styles.music}>
-              <h3>CURRENTLY CODING TO</h3>
+              <HeadlineReveal>CURRENTLY CODING TO</HeadlineReveal>
               <InfiniteLoop className={styles.music_wrapper}>
                 {MUSIC.map(({ artist = "", album = "", image = "", url }) => (
                   <div
@@ -137,7 +142,7 @@ export default function Home() {
             <div className={styles.primary}>
               {SKILLS.primary.map(({ categoryName = "", skills = [] }) => (
                 <div key={categoryName}>
-                  <h3>{categoryName}</h3>
+                  <HeadlineReveal>{categoryName}</HeadlineReveal>
                   {!!skills?.length && (
                     <ul>
                       {skills.map((skill = "") => (
@@ -152,7 +157,7 @@ export default function Home() {
 
           {!!SKILLS.tools?.length && (
             <div className={styles.tools}>
-              <h3>Tools I Use</h3>
+              <HeadlineReveal>Tools I Use</HeadlineReveal>
               <ul className="grid">
                 {SKILLS.tools.map(({ name, url }) => (
                   <li key={name}>
@@ -172,7 +177,9 @@ export default function Home() {
             ({ id = "", title = "", url = "", technologies = [] }) => (
               <div className={styles.project} key={id}>
                 <a href={url} target="_blank" rel="noreferrer">
-                  <h3 dangerouslySetInnerHTML={{ __html: title }} />
+                  <HeadlineReveal>
+                    <span dangerouslySetInnerHTML={{ __html: title }} />
+                  </HeadlineReveal>
                 </a>
                 {!!technologies?.length && (
                   <div className={styles.tech}>
@@ -194,10 +201,10 @@ export default function Home() {
 
           {!!PROJECTS.other?.length && (
             <div className={styles.more}>
-              <h3>
+              <HeadlineReveal>
                 OTHER WEBSITES{" "}
                 <span className={styles.sm_text}>I&apos;m proud of</span>
-              </h3>
+              </HeadlineReveal>
               <ul className="grid">
                 {PROJECTS.other.map(({ id, title, url }) => (
                   <li key={id}>
@@ -213,7 +220,7 @@ export default function Home() {
 
         {!!CONTACT.length && (
           <section id="contact" className={styles.contact}>
-            <h2 className="h3">Contact</h2>
+            <HeadlineReveal>Contact</HeadlineReveal>
             <ul className="grid">
               {CONTACT.map(({ label, url }) => (
                 <li key={label}>
