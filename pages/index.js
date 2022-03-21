@@ -88,8 +88,8 @@ export default function Home() {
               .
             </p>
             <p>
-              I loved using HTML and CSS for the day-to-day tasks while working
-              there, so I decided to enroll in a{" "}
+              I loved using HTML and CSS for the day-to-day tasks so I decided
+              to enroll in a{" "}
               <a
                 href="https://generalassemb.ly/locations/chicago"
                 target="_blank"
