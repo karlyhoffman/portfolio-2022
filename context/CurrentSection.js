@@ -15,8 +15,8 @@ export const CurrentSectionProvider = ({ children }) => {
       .forEach((id) => {
         ScrollTrigger.create({
           trigger: `#${id}`,
-          start: "top center",
-          end: "bottom center",
+          start: "top 75%",
+          end: "bottom 75%",
           onEnter: () => setSection(id),
           onEnterBack: () => setSection(id),
         });
