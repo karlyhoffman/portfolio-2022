@@ -32,6 +32,7 @@
           white-space: nowrap;
           padding-top: 0.5vw;
           opacity: 0;
+          transition: opacity 300ms ease-in-out 0s;
 
           &.active {
             opacity: 1;
