@@ -15,8 +15,8 @@ export const CurrentSectionProvider = ({ children }) => {
       .forEach((id) => {
         ScrollTrigger.create({
           trigger: `#${id}`,
-          start: "top 75%",
-          end: "bottom 75%",
+          start: "top center",
+          end: "bottom center",
           onEnter: () => setSection(id),
           onEnterBack: () => setSection(id),
         });
@@ -24,7 +24,7 @@ export const CurrentSectionProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    getCurrentSection();
+    setTimeout(getCurrentSection, 500); // set slight delay for layout shift
   }, []);
 
   return (

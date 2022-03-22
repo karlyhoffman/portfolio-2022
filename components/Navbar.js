@@ -12,8 +12,8 @@ const SECTIONS = ["home", "about", "skills", "work", "contact"];
 function Navbar() {
   const { section } = useContext(CurrentSectionContext);
 
-  const handleButtonClick = ({ scrollTo }) => {
-    gsap.to(window, { duration: 1, scrollTo });
+  const handleButtonClick = ({ id }) => {
+    gsap.to(window, { duration: 1, scrollTo: { y: id, offsetY: 10 } });
   };
 
   return (
@@ -26,7 +26,7 @@ function Navbar() {
               className={classNames({ [styles.active]: section === id })}
             >
               <button
-                onClick={() => handleButtonClick({ scrollTo: `#${id}` })}
+                onClick={() => handleButtonClick({ id: `#${id}` })}
                 type="button"
               >
                 {id}
