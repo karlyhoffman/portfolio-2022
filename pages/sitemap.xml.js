@@ -26,7 +26,7 @@ export const getServerSideProps = async ({ req, res }) => {
   res.write(
     createSitemap({
       data: PAGES,
-      url: req.headers?.host || 'https://karlyhoffman.com',
+      url: `https://${req.headers?.host || karlyhoffman.com}`,
     })
   );
   res.end();
