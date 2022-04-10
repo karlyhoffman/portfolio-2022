@@ -2,7 +2,7 @@ import { useContext } from "react";
 import classNames from "classnames";
 import Image from "next/image";
 import CurrentSectionContext from "context/CurrentSection";
-import { MUSIC, SKILLS, PROJECTS, CONTACT } from "data";
+import { SECTIONS, MUSIC, SKILLS, PROJECTS, CONTACT } from "data";
 import {
   InfiniteLoop,
   HeadlineReveal,
@@ -14,7 +14,7 @@ import styles from "styles/pages/home.module.scss";
 
 const PROJECT_DEMOS = {
   "outside-academy": <ProjectOutsideAcademy />,
-  gan: <ProjectGAN />,
+  "gan": <ProjectGAN />,
   "mcd-visid": <ProjectMcD />,
 };
 
@@ -24,27 +24,20 @@ export default function Home() {
 
   return (
     <div id={styles.home}>
-      <aside>
-        <ul>
-          <li className={classNames({ [styles.active]: section === "home" })}>
-            <a href="#home">KARLY HOFFMAN</a>
-          </li>
-          <li className={classNames({ [styles.active]: section === "about" })}>
-            <a href="#about">WHO I AM</a>
-          </li>
-          <li className={classNames({ [styles.active]: section === "skills" })}>
-            <a href="#skills">WHAT I KNOW</a>
-          </li>
-          <li className={classNames({ [styles.active]: section === "work" })}>
-            <a href="#work">WHAT I&apos;VE BUILT</a>
-          </li>
-          <li
-            className={classNames({ [styles.active]: section === "contact" })}
-          >
-            <a href="#contact">HOW TO REACH ME</a>
-          </li>
-        </ul>
-      </aside>
+      {!!SECTIONS?.length && (
+        <aside>
+          <ul>
+            {SECTIONS.map(({ id, subtitle }) => (
+              <li
+                key={id}
+                className={classNames({ [styles.active]: section === id })}
+              >
+                <a href={`#${id}`}>{subtitle.toUpperCase()}</a>
+              </li>
+            ))}
+          </ul>
+        </aside>
+      )}
 
       <main>
         <section id="home" className={styles.hero}>
@@ -77,7 +70,7 @@ export default function Home() {
           <div className={styles.intro_text}>
             <p>
               I started out as a web editor where I gained experience writing
-              and organizing content for a{" "}
+              and organizing content for a{' '}
               <a
                 href="https://www.tennis-warehouse.com/"
                 target="_blank"
@@ -89,25 +82,25 @@ export default function Home() {
             </p>
             <p>
               I loved using HTML and CSS for the day-to-day tasks so I decided
-              to enroll in a{" "}
+              to enroll in a{' '}
               <a
                 href="https://generalassemb.ly/locations/chicago"
                 target="_blank"
                 rel="noreferrer"
               >
                 coding bootcamp
-              </a>{" "}
+              </a>{' '}
               to learn more programming languages.
             </p>
             <p>
-              Now I work at a{" "}
+              Now I work at a{' '}
               <a
                 href="https://www.reachcreative.com/"
                 target="_blank"
                 rel="noreferrer"
               >
                 small boutique agency
-              </a>{" "}
+              </a>{' '}
               where I specialize in frontend development and enjoy building
               quality websites.
             </p>
@@ -117,7 +110,7 @@ export default function Home() {
             <div id="music" className={styles.music}>
               <HeadlineReveal>CURRENTLY CODING TO</HeadlineReveal>
               <InfiniteLoop className={styles.music_wrapper}>
-                {MUSIC.map(({ artist = "", album = "", image = "", url }) => (
+                {MUSIC.map(({ artist = '', album = '', image = '', url }) => (
                   <div
                     key={album}
                     className={styles.album}
@@ -142,12 +135,12 @@ export default function Home() {
           <h2 className="sr-only">Skills</h2>
           {!!SKILLS.primary?.length && (
             <div className={styles.primary}>
-              {SKILLS.primary.map(({ categoryName = "", skills = [] }) => (
+              {SKILLS.primary.map(({ categoryName = '', skills = [] }) => (
                 <div key={categoryName}>
                   <HeadlineReveal>{categoryName}</HeadlineReveal>
                   {!!skills?.length && (
                     <ul>
-                      {skills.map((skill = "") => (
+                      {skills.map((skill = '') => (
                         <li key={skill}>{skill}</li>
                       ))}
                     </ul>
@@ -176,7 +169,7 @@ export default function Home() {
         <section id="work" className={styles.work}>
           <h2 className="sr-only">Work</h2>
           {PROJECTS.featured?.map(
-            ({ id = "", title = "", url = "", technologies = [] }) => (
+            ({ id = '', title = '', url = '', technologies = [] }) => (
               <div className={styles.project} key={id}>
                 <a href={url} target="_blank" rel="noreferrer">
                   <HeadlineReveal>
@@ -204,7 +197,7 @@ export default function Home() {
           {!!PROJECTS.other?.length && (
             <div className={styles.more}>
               <HeadlineReveal>
-                OTHER WEBSITES{" "}
+                OTHER WEBSITES{' '}
                 <span className={styles.sm_text}>I&apos;m proud of</span>
               </HeadlineReveal>
               <ul className="grid">

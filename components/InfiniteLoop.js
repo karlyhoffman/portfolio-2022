@@ -84,7 +84,7 @@ const InfiniteLoop = ({ children, className, reverse = false }) => {
 
     return () => {
       timeline.pause(0).kill(true);
-      ScrollTrigger.getById(animationID).kill(true);
+      ScrollTrigger?.getById(animationID)?.kill(true);
     };
   }, [windowWidth, reverse]);
 
