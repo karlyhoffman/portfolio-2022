@@ -1,4 +1,5 @@
 export { default as Footer } from "./Footer";
+export { default as GoogleAnalytics, GoogleAnalyticsEvent } from "./GoogleAnalytics";
 export { default as HeadlineReveal } from "./HeadlineReveal";
 export { default as InfiniteLoop } from "./InfiniteLoop";
 export { default as Layout } from "./Layout";

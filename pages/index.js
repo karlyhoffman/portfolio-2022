@@ -9,6 +9,7 @@ import {
   ProjectOutsideAcademy,
   ProjectGAN,
   ProjectMcD,
+  GoogleAnalyticsEvent
 } from "components";
 import styles from "styles/pages/home.module.scss";
 
@@ -22,6 +23,13 @@ export default function Home() {
   const { section } = useContext(CurrentSectionContext);
   const currentYear = new Date().getFullYear() || "";
 
+  const handleOutboundClick = (params) => {
+    GoogleAnalyticsEvent({
+      action: 'outbound_link_click',
+      params,
+    });
+  }
+
   return (
     <div id={styles.home}>
       {!!SECTIONS?.length && (
@@ -32,7 +40,7 @@ export default function Home() {
                 key={id}
                 className={classNames({ [styles.active]: section === id })}
               >
-                <a href={`#${id}`}>{subtitle.toUpperCase()}</a>
+                {subtitle.toUpperCase()}
               </li>
             ))}
           </ul>
@@ -75,6 +83,13 @@ export default function Home() {
                 href="https://www.tennis-warehouse.com/"
                 target="_blank"
                 rel="noreferrer"
+                onClick={() =>
+                  handleOutboundClick({
+                    event_category: 'outbound_link_click',
+                    event_label: `Tennis Warehouse`,
+                    url,
+                  })
+                }
               >
                 large e-commerce company
               </a>
@@ -87,6 +102,13 @@ export default function Home() {
                 href="https://generalassemb.ly/locations/chicago"
                 target="_blank"
                 rel="noreferrer"
+                onClick={() =>
+                  handleOutboundClick({
+                    event_category: 'outbound_link_click',
+                    event_label: `General Assembly`,
+                    url,
+                  })
+                }
               >
                 coding bootcamp
               </a>{' '}
@@ -98,6 +120,13 @@ export default function Home() {
                 href="https://www.reachcreative.com/"
                 target="_blank"
                 rel="noreferrer"
+                onClick={() =>
+                  handleOutboundClick({
+                    event_category: 'outbound_link_click',
+                    event_label: `Reach Creative`,
+                    url,
+                  })
+                }
               >
                 small boutique agency
               </a>{' '}
@@ -116,7 +145,18 @@ export default function Home() {
                     className={styles.album}
                     title={`"${album}" by ${artist}`}
                   >
-                    <a href={url} target="_blank" rel="noreferrer">
+                    <a
+                      href={url}
+                      target="_blank"
+                      rel="noreferrer"
+                      onClick={() =>
+                        handleOutboundClick({
+                          event_category: 'outbound_link_click',
+                          event_label: `Album (${album} by ${artist})`,
+                          url,
+                        })
+                      }
+                    >
                       <Image
                         src={image}
                         width={400}
@@ -156,7 +196,18 @@ export default function Home() {
               <ul className="grid">
                 {SKILLS.tools.map(({ name, url }) => (
                   <li key={name}>
-                    <a href={url} target="_blank" rel="noreferrer">
+                    <a
+                      href={url}
+                      target="_blank"
+                      rel="noreferrer"
+                      onClick={() =>
+                        handleOutboundClick({
+                          event_category: 'outbound_link_click',
+                          event_label: name,
+                          url,
+                        })
+                      }
+                    >
                       {name}
                     </a>
                   </li>
@@ -171,7 +222,18 @@ export default function Home() {
           {PROJECTS.featured?.map(
             ({ id = '', title = '', url = '', technologies = [] }) => (
               <div className={styles.project} key={id}>
-                <a href={url} target="_blank" rel="noreferrer">
+                <a
+                  href={url}
+                  target="_blank"
+                  rel="noreferrer"
+                  onClick={() =>
+                    handleOutboundClick({
+                      event_category: 'outbound_link_click',
+                      event_label: title,
+                      url,
+                    })
+                  }
+                >
                   <HeadlineReveal>
                     <span dangerouslySetInnerHTML={{ __html: title }} />
                   </HeadlineReveal>
@@ -186,7 +248,18 @@ export default function Home() {
                   </div>
                 )}
                 <div className={styles.demo}>
-                  <a href={url} target="_blank" rel="noreferrer">
+                  <a
+                    href={url}
+                    target="_blank"
+                    rel="noreferrer"
+                    onClick={() =>
+                      handleOutboundClick({
+                        event_category: 'outbound_link_click',
+                        event_label: title,
+                        url,
+                      })
+                    }
+                  >
                     {PROJECT_DEMOS[id]}
                   </a>
                 </div>
@@ -203,7 +276,18 @@ export default function Home() {
               <ul className="grid">
                 {PROJECTS.other.map(({ id, title, url }) => (
                   <li key={id}>
-                    <a href={url} target="_blank" rel="noreferrer">
+                    <a
+                      href={url}
+                      target="_blank"
+                      rel="noreferrer"
+                      onClick={() =>
+                        handleOutboundClick({
+                          event_category: 'outbound_link_click',
+                          event_label: title,
+                          url,
+                        })
+                      }
+                    >
                       {title}
                     </a>
                   </li>
@@ -219,7 +303,18 @@ export default function Home() {
             <ul className="grid">
               {CONTACT.map(({ label, url }) => (
                 <li key={label}>
-                  <a href={url} target="_blank" rel="noreferrer">
+                  <a
+                    href={url}
+                    target="_blank"
+                    rel="noreferrer"
+                    onClick={() =>
+                      handleOutboundClick({
+                        event_category: 'outbound_link_click',
+                        event_label: label,
+                        url,
+                      })
+                    }
+                  >
                     {label}
                   </a>
                 </li>
