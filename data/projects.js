@@ -50,7 +50,7 @@ const PROJECTS = {
     new Project({
       id: "core",
       title: "Core Spaces",
-      url: "https://corespaces.vercel.app/",
+      url: "https://corespaces.com/",
     }),
   ],
 };
