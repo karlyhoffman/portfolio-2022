@@ -3,10 +3,10 @@ import { CurrentSectionProvider } from 'context/CurrentSection';
 import { Layout } from 'components';
 import 'styles/global.scss';
 
-const isProduction = process.env.NODE_ENV === 'production';
+const isDevelopment = process.env.NODE_ENV === 'development';
 
 function MyApp({ Component, pageProps }) {
-  console.log({ isProduction });
+  console.log({ isDevelopment });
 
   return (
     <>
@@ -15,7 +15,7 @@ function MyApp({ Component, pageProps }) {
           <Component {...pageProps} />
         </Layout>
       </CurrentSectionProvider>
-      {isProduction && <Analytics />}
+      {/* {isProduction && <Analytics />} */}
     </>
   );
 }
