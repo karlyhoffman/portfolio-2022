@@ -1,9 +1,9 @@
 import Head from "next/head";
 import { GoogleAnalytics, Navbar, Footer } from "components";
 
-function Layout({ children }) {
+function Layout({ children, fontClasses }) {
   return (
-    <>
+    <div id="app" className={fontClasses}>
       <Head>
         <title>Karly Hoffman | Web Developer</title>
         <meta
@@ -16,7 +16,7 @@ function Layout({ children }) {
       <Navbar />
       {children}
       <Footer />
-    </>
+    </div>
   );
 }
 

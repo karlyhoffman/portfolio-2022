@@ -1,27 +1,3 @@
-@font-face {
-  font-family: 'Fjalla One';
-  src: url('/fonts/Fjalla-One.woff2') format('woff2'),
-       url('/fonts/Fjalla-One.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Geograph-Bold';
-  src: url('/fonts/Geograph-Bold.woff2') format('woff2'),
-       url('/fonts/Geograph-Bold.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Speedee-Bold';
-  src: url('/fonts/Speedee-Bold.woff2') format('woff2'),
-       url('/fonts/Speedee-Bold.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
-$fjalla-one: 'Fjalla One', sans-serif;
-$geograph-bold: 'Geograph-Bold', Helvetica, Arial, sans-serif;
-$speedee-bold: 'Speedee-Bold', Arial, sans-serif;
+$fjalla-one: var(--font-fjalla-one);
+$geograph-bold: var(--font-geograph-bold);
+$speedee-bold: var(--font-speedee-bold);
