@@ -1,5 +1,6 @@
 import { useRef, useLayoutEffect } from "react";
 import dynamic from "next/dynamic";
+import Image from "next/image";
 import classNames from "classnames";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
@@ -96,8 +97,9 @@ const ProjectMcD = () => {
         <div className={styles.fries}>
           {[...Array(13).keys()].map((el, i) => (
             <div className={classNames(styles.fry, "fry")} key={el}>
-              <img
+              <Image
                 src={i === 6 ? "/images/fry-ketchup.svg" : "/images/fry.svg"}
+                fill
                 alt=""
               />
             </div>

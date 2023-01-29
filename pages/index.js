@@ -15,7 +15,7 @@ import styles from "styles/pages/home.module.scss";
 
 const PROJECT_DEMOS = {
   "outside-academy": <ProjectOutsideAcademy />,
-  "gan": <ProjectGAN />,
+  gan: <ProjectGAN />,
   "mcd-visid": <ProjectMcD />,
 };
 
@@ -157,12 +157,7 @@ export default function Home() {
                         })
                       }
                     >
-                      <Image
-                        src={image}
-                        width={400}
-                        height={400}
-                        alt={`"${album}" by ${artist}`}
-                      />
+                      <Image src={image} fill alt={`"${album}" by ${artist}`} />
                     </a>
                   </div>
                 ))}

@@ -25,11 +25,9 @@
       transform: rotate(-45deg) translate(20vw, 35vw);
 
       .fry {
-
-        img {
-          width: 5vw;
-          min-width: 35px;
-        }
+        width: 5vw;
+        min-width: 35px;
+        aspect-ratio: 0.098;
 
         &:nth-child(1n) {
           padding-top: 100px;

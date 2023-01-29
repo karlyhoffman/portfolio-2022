@@ -20,13 +20,7 @@ const ProjectOutsideAcademy = () => {
           scale={1.005}
           transitionSpeed={1000}
         >
-          <Image
-            className={styles.bg_img}
-            src="/images/project-oa.webp"
-            width={1475}
-            height={515}
-            alt=""
-          />
+          <Image src="/images/project-oa.webp" fill alt="" />
 
           <div className={styles.text}>
             <SmoothScrollElement>

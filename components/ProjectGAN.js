@@ -1,5 +1,6 @@
 import { useRef, useEffect, useLayoutEffect } from "react";
 import dynamic from "next/dynamic";
+import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import styles from "styles/components/project-gan.module.scss";
@@ -50,7 +51,13 @@ const ProjectGAN = () => {
             ref={(el) => (itemsRef.current[i] = el)}
             className={styles.item}
           >
-            <img className={styles.img} src={image} alt="" />
+            <Image
+              src={image}
+              alt=""
+              className={styles.img}
+              width={200}
+              height={200}
+            />
           </div>
         ))}
       </div>
