@@ -1,8 +1,6 @@
-const isProduction = process.env.NODE_ENV === 'production';
+const isProduction = process.env.NODE_ENV === "production";
 
 const GoogleAnalytics = () => {
-  console.log('GA', { isProduction });
-
   if (!isProduction) return null;
 
   return (
@@ -26,7 +24,7 @@ const GoogleAnalytics = () => {
 
 export const GoogleAnalyticsEvent = ({ action, params }) => {
   if (isProduction && window?.gtag && action && params) {
-    window.gtag('event', action, params);
+    window.gtag("event", action, params);
   }
 };
 

@@ -24,8 +24,6 @@ const speedeeBold = localFont({
 const fonts = `${fjallaOne.variable} ${geographBold.variable} ${speedeeBold.variable}`;
 
 function MyApp({ Component, pageProps }) {
-  console.log({ isProduction });
-
   return (
     <>
       <CurrentSectionProvider>
