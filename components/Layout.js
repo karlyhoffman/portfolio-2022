@@ -4,8 +4,6 @@ import { GoogleAnalytics, Navbar, Footer } from "components";
 const isProduction = process.env.NODE_ENV === "production";
 
 function Layout({ children, fontClasses }) {
-  console.log({ isProduction });
-
   return (
     <div id="app" className={fontClasses}>
       <Head>
