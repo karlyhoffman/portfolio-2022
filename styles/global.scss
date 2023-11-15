@@ -118,7 +118,7 @@ ul.grid {
     text-align: center;
     border-bottom: $border;
 
-    &:nth-of-type(odd) {
+    &:nth-of-type(odd):not(:last-of-type) {
       border-right: $border;
     }
 
