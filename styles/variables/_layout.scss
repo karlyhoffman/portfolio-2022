@@ -1,11 +1,11 @@
 @use './colors';
 
-$border-width: 12px;
+$border-width: min(1.3vw, 12px);
 $border: $border-width solid colors.$black;
 
 $aside-width: 13vw;
-$nav-width: 9.5vw; 
-$main-width: calc(100% - #{$aside-width} - #{$nav-width} - #{$border-width * 0});
+$nav-width: 9.5vw;
+$main-width: calc(100% - #{$aside-width} - #{$nav-width});
 
 $section-y-margin: 100px;
 $section-x-padding: 2vw;
