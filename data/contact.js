@@ -8,6 +8,10 @@ class Contact {
 
 const CONTACT = [
   new Contact({
+    label: 'Email',
+    url: 'mailto:karlyhoffman@gmail.com',
+  }),
+  new Contact({
     label: 'Github',
     url: 'https://github.com/karlyhoffman',
   }),
@@ -15,17 +19,13 @@ const CONTACT = [
     label: 'LinkedIn',
     url: 'https://www.linkedin.com/in/karlyhoffman/',
   }),
-  new Contact({
-    label: 'CodePen',
-    url: 'https://codepen.io/karlyhoffman/',
-  }),
+  // new Contact({
+  //   label: 'CodePen',
+  //   url: 'https://codepen.io/karlyhoffman/',
+  // }),
   new Contact({
     label: 'Instagram',
     url: 'https://www.instagram.com/hungryhoff/',
-  }),
-  new Contact({
-    label: 'Email',
-    url: 'mailto:karlyhoffman@gmail.com',
   }),
   // new Contact({
   //   label: "Ello",

@@ -290,7 +290,6 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        height: calc(100vh - #{$section-y-margin * 2} - 78px);
       }
     }
   }
