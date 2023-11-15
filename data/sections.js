@@ -19,13 +19,13 @@ const SECTIONS = [
     id: 'skills',
     subtitle: 'What I Know',
   }),
-  new Section({
-    id: 'work',
-    subtitle: `What I've Built`,
-  }),
+  // new Section({
+  //   id: 'work',
+  //   subtitle: `What I've Built`,
+  // }),
   new Section({
     id: 'contact',
-    subtitle: "How to Reach Me",
+    subtitle: 'How to Reach Me',
   }),
 ];
 

@@ -8,29 +8,29 @@ class Contact {
 
 const CONTACT = [
   new Contact({
-    label: "Email",
-    url: "mailto:karlyhoffman@gmail.com",
+    label: 'Github',
+    url: 'https://github.com/karlyhoffman',
   }),
   new Contact({
-    label: "Github",
-    url: "https://github.com/karlyhoffman",
+    label: 'LinkedIn',
+    url: 'https://www.linkedin.com/in/karlyhoffman/',
   }),
   new Contact({
-    label: "LinkedIn",
-    url: "https://www.linkedin.com/in/karlyhoffman/",
+    label: 'CodePen',
+    url: 'https://codepen.io/karlyhoffman/',
   }),
   new Contact({
-    label: "CodePen",
-    url: "https://codepen.io/karlyhoffman/",
+    label: 'Instagram',
+    url: 'https://www.instagram.com/hungryhoff/',
   }),
   new Contact({
-    label: "Instagram",
-    url: "https://www.instagram.com/hungryhoff/",
+    label: 'Email',
+    url: 'mailto:karlyhoffman@gmail.com',
   }),
-  new Contact({
-    label: "Ello",
-    url: "https://ello.co/ello-govna",
-  }),
+  // new Contact({
+  //   label: "Ello",
+  //   url: "https://ello.co/ello-govna",
+  // }),
 ];
 
 export default CONTACT;
