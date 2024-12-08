@@ -2,22 +2,22 @@ import { useContext } from "react";
 import classNames from "classnames";
 import Image from "next/image";
 import CurrentSectionContext from "context/CurrentSection";
-import { SECTIONS, MUSIC, SKILLS, PROJECTS, CONTACT } from "data";
+import { SECTIONS, MUSIC, SKILLS, PROJECTS, RECOGNITIONS, CONTACT } from "data";
 import {
   InfiniteLoop,
   HeadlineReveal,
-  ProjectOutsideAcademy,
-  ProjectGAN,
-  ProjectMcD,
+  // ProjectOutsideAcademy,
+  // ProjectGAN,
+  // ProjectMcD,
   GoogleAnalyticsEvent,
 } from "components";
 import styles from "styles/pages/home.module.scss";
 
-const PROJECT_DEMOS = {
-  "outside-academy": <ProjectOutsideAcademy />,
-  gan: <ProjectGAN />,
-  "mcd-visid": <ProjectMcD />,
-};
+// const PROJECT_DEMOS = {
+//   "outside-academy": <ProjectOutsideAcademy />,
+//   gan: <ProjectGAN />,
+//   "mcd-visid": <ProjectMcD />,
+// };
 
 export default function Home() {
   const { section } = useContext(CurrentSectionContext);
@@ -36,10 +36,7 @@ export default function Home() {
         <aside>
           <ul>
             {SECTIONS.map(({ id, subtitle }) => (
-              <li
-                key={id}
-                className={classNames({ [styles.active]: section === id })}
-              >
+              <li key={id} className={classNames({ [styles.active]: section === id })}>
                 {subtitle.toUpperCase()}
               </li>
             ))}
@@ -49,9 +46,7 @@ export default function Home() {
 
       <main>
         <section id="home" className={styles.hero}>
-          <h1 className="sr-only">
-            Karly Hoffman&apos;s {currentYear} Developer Portfolio
-          </h1>
+          <h1 className="sr-only">Karly Hoffman&apos;s {currentYear} Developer Portfolio</h1>
 
           <div className={styles.title} aria-hidden="true">
             <div>
@@ -77,8 +72,8 @@ export default function Home() {
           <h2 className="sr-only">About</h2>
           <div className={styles.intro_text}>
             <p>
-              I started out as a web editor where I gained experience writing
-              and organizing content for a{" "}
+              I started out as a web editor where I gained experience writing and organizing content
+              for a{' '}
               <a
                 href="https://www.tennis-warehouse.com/"
                 target="_blank"
@@ -96,8 +91,7 @@ export default function Home() {
               .
             </p>
             <p>
-              I loved using HTML and CSS for the day-to-day tasks so I decided
-              to enroll in a{" "}
+              I loved using HTML and CSS for the day-to-day tasks so I decided to enroll in a{' '}
               <a
                 href="https://generalassemb.ly/locations/chicago"
                 target="_blank"
@@ -111,11 +105,11 @@ export default function Home() {
                 }
               >
                 coding bootcamp
-              </a>{" "}
+              </a>{' '}
               to learn more programming languages.
             </p>
             <p>
-              Now I work at a{" "}
+              Now I work at a{' '}
               <a
                 href="https://www.onedesigncompany.com/"
                 target="_blank"
@@ -129,9 +123,8 @@ export default function Home() {
                 }
               >
                 design studio
-              </a>{" "}
-              where I specialize in frontend development and enjoy building
-              quality websites.
+              </a>{' '}
+              where I specialize in frontend development and enjoy building quality websites.
             </p>
           </div>
 
@@ -139,12 +132,8 @@ export default function Home() {
             <div id="music" className={styles.music}>
               <HeadlineReveal>CURRENTLY CODING TO</HeadlineReveal>
               <InfiniteLoop className={styles.music_wrapper}>
-                {MUSIC.map(({ artist = "", album = "", image = "", url }) => (
-                  <div
-                    key={album}
-                    className={styles.album}
-                    title={`"${album}" by ${artist}`}
-                  >
+                {MUSIC.map(({ artist = '', album = '', image = '', url }) => (
+                  <div key={album} className={styles.album} title={`"${album}" by ${artist}`}>
                     <a
                       href={url}
                       target="_blank"
@@ -157,7 +146,12 @@ export default function Home() {
                         })
                       }
                     >
-                      <Image src={image} fill alt={`"${album}" by ${artist}`} />
+                      <Image
+                        src={image}
+                        alt={`"${album}" by ${artist}`}
+                        fill
+                        sizes="(max-width: 992px) 20vw, (max-width: 1800px) 12vw"
+                      />
                     </a>
                   </div>
                 ))}
@@ -170,12 +164,12 @@ export default function Home() {
           <h2 className="sr-only">Skills</h2>
           {!!SKILLS.primary?.length && (
             <div className={styles.primary}>
-              {SKILLS.primary.map(({ categoryName = "", skills = [] }) => (
+              {SKILLS.primary.map(({ categoryName = '', skills = [] }) => (
                 <div key={categoryName}>
                   <HeadlineReveal>{categoryName}</HeadlineReveal>
                   {!!skills?.length && (
                     <ul>
-                      {skills.map((skill = "") => (
+                      {skills.map((skill = '') => (
                         <li key={skill}>{skill}</li>
                       ))}
                     </ul>
@@ -212,7 +206,7 @@ export default function Home() {
           )}
         </section>
 
-        <section id="work" className={styles.work}>
+        {/* <section id="work" className={styles.work}>
           <h2 className="sr-only">Work</h2>
           {PROJECTS.featured?.map(
             ({ id = "", title = "", url = "", technologies = [] }) => (
@@ -290,11 +284,42 @@ export default function Home() {
               </ul>
             </div>
           )}
+        </section> */}
+
+        <section id="work" className={styles.awards}>
+          <h2 className="sr-only">Work</h2>
+          {!!RECOGNITIONS?.length && (
+            <div className={styles.awards}>
+              <HeadlineReveal tag="h2">Recognition</HeadlineReveal>
+              <ul className="grid">
+                {RECOGNITIONS.map(({ id = '', title = '', url = '', company = '' }) => (
+                  <li key={id}>
+                    <a
+                      href={url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className={styles.project}
+                      onClick={() =>
+                        handleOutboundClick({
+                          event_category: 'outbound_link_click',
+                          event_label: title,
+                          url,
+                        })
+                      }
+                    >
+                      <h4>{title}</h4>
+                      <p>with {company}</p>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
         </section>
 
         {!!CONTACT.length && (
           <section id="contact" className={styles.contact}>
-            <HeadlineReveal>Contact</HeadlineReveal>
+            <HeadlineReveal tag="h2">Contact</HeadlineReveal>
             <ul className="grid">
               {CONTACT.map(({ label, url }) => (
                 <li key={label}>
