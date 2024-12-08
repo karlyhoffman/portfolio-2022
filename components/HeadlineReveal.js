@@ -3,12 +3,14 @@ import dynamic from "next/dynamic";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import styles from "styles/components/headline-reveal.module.scss";
+import classNames from "classnames";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const HeadlineReveal = ({ children }) => {
+const HeadlineReveal = ({ children, tag = 'h3' }) => {
   const wrapper = useRef([]);
   const el = useRef([]);
+  const Tag = tag;
 
   useLayoutEffect(() => {
     gsap.to(el.current, {
@@ -22,11 +24,11 @@ const HeadlineReveal = ({ children }) => {
   }, []);
 
   return (
-    <h3 ref={wrapper} className={styles.wrapper}>
+    <Tag ref={wrapper} className={classNames(styles.wrapper, 'h3')}>
       <span ref={el} className={styles.content}>
         {children}
       </span>
-    </h3>
+    </Tag>
   );
 };
 
