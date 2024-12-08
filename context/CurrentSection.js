@@ -16,10 +16,11 @@ export const CurrentSectionProvider = ({ children }) => {
       .forEach((id) => {
         ScrollTrigger.create({
           trigger: `#${id}`,
-          start: "top center",
+          start: "top 65%",
           end: "bottom center",
           onEnter: () => setSection(id),
           onEnterBack: () => setSection(id),
+          // markers: true,
         });
       });
   };
