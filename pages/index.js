@@ -6,18 +6,18 @@ import { SECTIONS, MUSIC, SKILLS, PROJECTS, RECOGNITIONS, CONTACT } from "data";
 import {
   InfiniteLoop,
   HeadlineReveal,
-  // ProjectOutsideAcademy,
-  // ProjectGAN,
-  // ProjectMcD,
+  ProjectOutsideAcademy,
+  ProjectGAN,
+  ProjectMcD,
   GoogleAnalyticsEvent,
 } from "components";
 import styles from "styles/pages/home.module.scss";
 
-// const PROJECT_DEMOS = {
-//   "outside-academy": <ProjectOutsideAcademy />,
-//   gan: <ProjectGAN />,
-//   "mcd-visid": <ProjectMcD />,
-// };
+const PROJECT_DEMOS = {
+  "outside-academy": <ProjectOutsideAcademy />,
+  gan: <ProjectGAN />,
+  "mcd-visid": <ProjectMcD />,
+};
 
 export default function Home() {
   const { section } = useContext(CurrentSectionContext);
@@ -206,7 +206,7 @@ export default function Home() {
           )}
         </section>
 
-        {/* <section id="work" className={styles.work}>
+        <section id="work" className={styles.work}>
           <h2 className="sr-only">Work</h2>
           {PROJECTS.featured?.map(
             ({ id = "", title = "", url = "", technologies = [] }) => (
@@ -284,10 +284,7 @@ export default function Home() {
               </ul>
             </div>
           )}
-        </section> */}
 
-        <section id="work" className={styles.awards}>
-          <h2 className="sr-only">Work</h2>
           {!!RECOGNITIONS?.length && (
             <div className={styles.awards}>
               <HeadlineReveal tag="h2">Recognition</HeadlineReveal>
