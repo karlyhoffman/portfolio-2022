@@ -257,7 +257,7 @@ export default function Home() {
           )}
 
           {!!RECOGNITIONS?.length && (
-            <div className={styles.more}>
+            <div className={styles.awards}>
               <HeadlineReveal tag="h2">Recognition</HeadlineReveal>
               <ul className="grid">
                 {RECOGNITIONS.map(({ id = '', title = '', url = '', company = '' }) => (
