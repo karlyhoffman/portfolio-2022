@@ -19,14 +19,14 @@ const CONTACT = [
     label: 'LinkedIn',
     url: 'https://www.linkedin.com/in/karlyhoffman/',
   }),
-  // new Contact({
-  //   label: 'CodePen',
-  //   url: 'https://codepen.io/karlyhoffman/',
-  // }),
   new Contact({
-    label: 'Instagram',
-    url: 'https://www.instagram.com/hungryhoff/',
+    label: 'CodePen',
+    url: 'https://codepen.io/karlyhoffman/',
   }),
+  // new Contact({
+  //   label: 'Instagram',
+  //   url: 'https://www.instagram.com/hungryhoff/',
+  // }),
   // new Contact({
   //   label: "Ello",
   //   url: "https://ello.co/ello-govna",
