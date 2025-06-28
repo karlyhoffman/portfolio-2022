@@ -256,37 +256,7 @@ export default function Home() {
             )
           )}
 
-          // {!!PROJECTS.other?.length && (
-          //   <div className={styles.more}>
-          //     <HeadlineReveal>
-          //       OTHER WEBSITES{" "}
-          //       <span className={styles.sm_text}>I&apos;m proud of</span>
-          //     </HeadlineReveal>
-          //     <ul className="grid">
-          //       {PROJECTS.other.map(({ id, title, url }) => (
-          //         <li key={id}>
-          //           <a
-          //             href={url}
-          //             target="_blank"
-          //             rel="noreferrer"
-          //             onClick={() =>
-          //               handleOutboundClick({
-          //                 event_category: "outbound_link_click",
-          //                 event_label: title,
-          //                 url,
-          //               })
-          //             }
-          //           >
-          //             {title}
-          //           </a>
-          //         </li>
-          //       ))}
-          //     </ul>
-          //   </div>
-          // )}
-
           {!!RECOGNITIONS?.length && (
-            // <div className={styles.awards}>
             <div className={styles.more}>
               <HeadlineReveal tag="h2">Recognition</HeadlineReveal>
               <ul className="grid">
