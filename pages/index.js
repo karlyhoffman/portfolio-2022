@@ -71,43 +71,7 @@ export default function Home() {
         <section id="about" className={styles.about}>
           <h2 className="sr-only">About</h2>
           <div className={styles.intro_text}>
-            <p>
-              I started out as a web editor where I gained experience writing and organizing content
-              for a{' '}
-              <a
-                href="https://www.tennis-warehouse.com/"
-                target="_blank"
-                rel="noreferrer"
-                onClick={() =>
-                  handleOutboundClick({
-                    event_category: "outbound_link_click",
-                    event_label: `Tennis Warehouse`,
-                    url,
-                  })
-                }
-              >
-                large e-commerce company
-              </a>
-              .
-            </p>
-            <p>
-              I loved using HTML and CSS for the day-to-day tasks so I decided to enroll in a{' '}
-              <a
-                href="https://generalassemb.ly/locations/chicago"
-                target="_blank"
-                rel="noreferrer"
-                onClick={() =>
-                  handleOutboundClick({
-                    event_category: "outbound_link_click",
-                    event_label: `General Assembly`,
-                    url,
-                  })
-                }
-              >
-                coding bootcamp
-              </a>{' '}
-              to learn more programming languages.
-            </p>
+            <p>Over the past eight years, I’ve built a career in web development that focuses on building responsive, user-friendly web interfaces with a keen eye for detail. I have a particular enthusiasm for smooth UX animations and micro-interactions—small touches that make a product feel polished and intuitive. (If I had to pick a favorite language, it’d be a toss-up between JavaScript and CSS.)</p>
           </div>
 
           {!!MUSIC?.length && (
