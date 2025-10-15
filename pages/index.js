@@ -108,24 +108,6 @@ export default function Home() {
               </a>{' '}
               to learn more programming languages.
             </p>
-            <p>
-              Now I work at a{' '}
-              <a
-                href="https://www.onedesigncompany.com/"
-                target="_blank"
-                rel="noreferrer"
-                onClick={() =>
-                  handleOutboundClick({
-                    event_category: "outbound_link_click",
-                    event_label: `One Design`,
-                    url,
-                  })
-                }
-              >
-                design studio
-              </a>{' '}
-              where I specialize in frontend development and enjoy building quality websites.
-            </p>
           </div>
 
           {!!MUSIC?.length && (
