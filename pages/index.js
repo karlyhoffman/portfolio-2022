@@ -206,24 +206,44 @@ export default function Home() {
             <div className={styles.awards}>
               <HeadlineReveal tag="h2">Recognition</HeadlineReveal>
               <ul className="grid">
-                {RECOGNITIONS.map(({ id = '', title = '', url = '', company = '' }) => (
+                {RECOGNITIONS.map(({ id = '', title = '', url = '', company = '', projectUrl = '' }) => (
                   <li key={id}>
-                    <a
-                      href={url}
-                      target="_blank"
-                      rel="noreferrer"
-                      className={styles.project}
-                      onClick={() =>
-                        handleOutboundClick({
-                          event_category: 'outbound_link_click',
-                          event_label: title,
-                          url,
-                        })
-                      }
-                    >
-                      <h4>{title}</h4>
-                      <p>with {company}</p>
-                    </a>
+                    <div className={styles.project}>
+                      <a
+                        href={url}
+                        target="_blank"
+                        rel="noreferrer"
+                        className={styles.project}
+                        onClick={() =>
+                          handleOutboundClick({
+                            event_category: 'outbound_link_click',
+                            event_label: title,
+                            url,
+                          })
+                        }
+                      >
+                        <h4>{title}</h4>
+                        <p>with {company}</p>
+                      </a>
+
+                      {!!projectUrl.length && (
+                        <a
+                          href={projectUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                          className={styles.view_project}
+                          onClick={() =>
+                            handleOutboundClick({
+                              event_category: 'outbound_link_click',
+                              event_label: `Project Link - ${title}`,
+                              url: projectUrl,
+                            })
+                          }
+                        >
+                          View Project
+                        </a>
+                      )}
+                    </div>
                   </li>
                 ))}
               </ul>

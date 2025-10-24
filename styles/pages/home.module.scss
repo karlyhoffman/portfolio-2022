@@ -274,14 +274,11 @@
           .demo {
             padding: $section-x-padding;
           }
-        }
 
-        .more .sm_text {
-          font-size: 3.7vw;
-          font-weight: bold;
-
-          @media screen and (min-width: $desktop) {
-            font-size: 2.75vw;
+          .view_project {
+            font-size: max(1.6vw, 16px);
+            font-weight: bold;
+            border-top: $border;
           }
         }
       }
