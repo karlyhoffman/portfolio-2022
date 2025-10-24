@@ -154,7 +154,7 @@ export default function Home() {
 
         <section id="work" className={styles.work}>
           <h2 className="sr-only">Work</h2>
-          {PROJECTS.featured?.map(
+          {/* {PROJECTS.featured?.map(
             ({ id = "", title = "", url = "", technologies = [] }) => (
               <div className={styles.project} key={id}>
                 <a
@@ -200,7 +200,7 @@ export default function Home() {
                 </div>
               </div>
             )
-          )}
+          )} */}
 
           {!!RECOGNITIONS?.length && (
             <div className={styles.awards}>

@@ -216,13 +216,13 @@
 
         .project {
           display: block;
-          border-bottom: $border;
-          margin-bottom: 50px;
+          // border-bottom: $border;
+          // margin-bottom: 50px;
           overflow: hidden;
 
-          @media screen and (min-width: $desktop) {
-            margin-bottom: $section-y-margin;
-          }
+          // @media screen and (min-width: $desktop) {
+          //   margin-bottom: $section-y-margin;
+          // }
 
           h3 {
             display: block;
