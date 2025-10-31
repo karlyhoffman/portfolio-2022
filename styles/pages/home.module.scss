@@ -236,6 +236,14 @@
             }
           }
 
+          h4 {
+            padding: $section-x-padding 0;
+
+            span {
+              display: block
+            }
+          }
+
           .tech {
             display: flex;
             align-items: center;

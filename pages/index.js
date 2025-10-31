@@ -209,11 +209,15 @@ export default function Home() {
                 {RECOGNITIONS.map(({ id = '', title = '', url = '', company = '', projectUrl = '' }) => (
                   <li key={id}>
                     <div className={styles.project}>
+                      <div>
+                        <h4>{title} <span>with {company}</span></h4>
+                      </div>
+
                       <a
                         href={url}
                         target="_blank"
                         rel="noreferrer"
-                        className={styles.project}
+                        className={styles.view_project}
                         onClick={() =>
                           handleOutboundClick({
                             event_category: 'outbound_link_click',
@@ -222,8 +226,7 @@ export default function Home() {
                           })
                         }
                       >
-                        <h4>{title}</h4>
-                        <p>with {company}</p>
+                        View Award
                       </a>
 
                       {!!projectUrl.length && (
