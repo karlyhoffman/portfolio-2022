@@ -68,12 +68,6 @@ const MUSIC = [
     url: "https://mandyindiana.bandcamp.com/album/ep",
     image: "/images/album-mandy-indiana.webp",
   }),
-  new Album({
-    artist: "Los Tones",
-    album: "Psychotropic",
-    url: "https://los-tones.bandcamp.com/album/psychotropic",
-    image: "/images/album-los-tones.webp",
-  }),
 ];
 
 export default MUSIC;

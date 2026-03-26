@@ -76,7 +76,7 @@ export default function Home() {
 
           {!!MUSIC?.length && (
             <div id="music" className={styles.music}>
-              <HeadlineReveal>CURRENTLY CODING TO</HeadlineReveal>
+              <HeadlineReveal>CODING TO</HeadlineReveal>
               <InfiniteLoop className={styles.music_wrapper}>
                 {MUSIC.map(({ artist = '', album = '', image = '', url }) => (
                   <div key={album} className={styles.album} title={`"${album}" by ${artist}`}>
