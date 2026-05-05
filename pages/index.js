@@ -71,7 +71,27 @@ export default function Home() {
         <section id="about" className={styles.about}>
           <h2 className="sr-only">About</h2>
           <div className={styles.intro_text}>
-            <p>Over the past eight years, I’ve built a career in web development that focuses on building responsive, user-friendly web interfaces with a keen eye for detail. I have a particular enthusiasm for smooth UX animations and micro-interactions—small touches that make a product feel polished and intuitive. (If I had to pick a favorite language, it’d be a toss-up between JavaScript and CSS.)</p>
+            <p>
+              Over the past nine years, I&apos;ve built a career in web development focusing on building
+              responsive, user-friendly web interfaces with a keen eye for detail. I have a
+              particular enthusiasm for smooth UX animations and micro-interactions—small touches
+              that make a product feel polished and intuitive.
+            </p>
+
+            <p>
+              Though frontend is my specialty, my full-stack coding academy training and experience
+              at design agencies have sharpened my ability to learn quickly and deliver impactful
+              features under tight timelines. I&apos;m comfortable diving into new technologies and
+              adapting as projects evolve—whether that means integrating APIs, debugging across the
+              stack, or collaborating closely with designers and stakeholders.
+            </p>
+          </div>
+
+          <HeadlineReveal tag="h2">Philosophy</HeadlineReveal>
+          <div className={styles.intro_text}>
+            <p>
+              My development philosophy centers on writing clean, maintainable code that&apos;s easy to understand and built to last. I&apos;ve found that clear organization significantly improves efficiency and collaboration. While I see real value in using AI tools to get unstuck or explore alternatives, I prefer to start with documentation and established best practices. I believe that&apos;s how to build lasting skills and a deeper understanding.
+            </p>
           </div>
 
           {!!MUSIC?.length && (
