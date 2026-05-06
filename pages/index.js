@@ -87,7 +87,7 @@ export default function Home() {
             </p>
           </div>
 
-          <HeadlineReveal tag="h2">Philosophy</HeadlineReveal>
+          <HeadlineReveal tag="h2" center>Philosophy</HeadlineReveal>
           <div className={styles.intro_text}>
             <p>
               My development philosophy centers on writing clean, maintainable code that&apos;s easy to understand and built to last. I&apos;ve found that clear organization significantly improves efficiency and collaboration. While I see real value in using AI tools to get unstuck or explore alternatives, I prefer to start with documentation and established best practices. I believe that&apos;s how to build lasting skills and a deeper understanding.
@@ -96,7 +96,7 @@ export default function Home() {
 
           {!!MUSIC?.length && (
             <div id="music" className={styles.music}>
-              <HeadlineReveal>CODING TO</HeadlineReveal>
+              <HeadlineReveal center>CODING TO</HeadlineReveal>
               <InfiniteLoop className={styles.music_wrapper}>
                 {MUSIC.map(({ artist = '', album = '', image = '', url }) => (
                   <div key={album} className={styles.album} title={`"${album}" by ${artist}`}>
@@ -147,7 +147,7 @@ export default function Home() {
 
           {!!SKILLS.tools?.length && (
             <div className={styles.tools}>
-              <HeadlineReveal>Tools I Use</HeadlineReveal>
+              <HeadlineReveal center>Tools I Use</HeadlineReveal>
               <ul className="grid">
                 {SKILLS.tools.map(({ name, url }) => (
                   <li key={name}>
@@ -224,7 +224,7 @@ export default function Home() {
 
           {!!RECOGNITIONS?.length && (
             <div className={styles.awards}>
-              <HeadlineReveal tag="h2">Recognition</HeadlineReveal>
+              <HeadlineReveal tag="h2" center>Recognition</HeadlineReveal>
               <ul className="grid">
                 {RECOGNITIONS.map(({ id = '', title = '', url = '', company = '', projectUrl = '' }) => (
                   <li key={id}>

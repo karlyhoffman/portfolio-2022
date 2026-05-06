@@ -3,6 +3,10 @@
   position: relative;
   overflow: hidden;
 
+  &.center {
+    text-align: center;
+  }
+
   .content {
     display: block;
     position: relative;

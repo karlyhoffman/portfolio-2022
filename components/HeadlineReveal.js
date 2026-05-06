@@ -7,7 +7,7 @@ import classNames from "classnames";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const HeadlineReveal = ({ children, tag = 'h3' }) => {
+const HeadlineReveal = ({ children, tag = 'h3', center = false }) => {
   const wrapper = useRef([]);
   const el = useRef([]);
   const Tag = tag;
@@ -24,7 +24,9 @@ const HeadlineReveal = ({ children, tag = 'h3' }) => {
   }, []);
 
   return (
-    <Tag ref={wrapper} className={classNames(styles.wrapper, 'h3')}>
+    <Tag ref={wrapper} className={classNames(styles.wrapper, 'h3', {
+        [styles.center]: center,
+    })}>
       <span ref={el} className={styles.content}>
         {children}
       </span>
