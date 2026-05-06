@@ -14,7 +14,7 @@ const HeadlineReveal = ({ children, tag = 'h3', center = false }) => {
 
   useLayoutEffect(() => {
     gsap.to(el.current, {
-      translateY: "4%",
+      translateY: "3%",
       duration: 0.4,
       scrollTrigger: {
         trigger: wrapper.current,
