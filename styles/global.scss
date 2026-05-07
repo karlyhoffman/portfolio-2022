@@ -52,6 +52,20 @@ body {
 #app {
   font-family: $fjalla-one;
   border: $border;
+
+  // Safari liquid glass transparency fix
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: calc(100% + #{$border-width});
+    left: 0;
+    right: 0;
+    height: 100px;
+    background-color: $white;
+    pointer-events: none;
+    z-index: 3;
+  }
 }
 
 h1, h2, h3, h4, h5, h6, p {

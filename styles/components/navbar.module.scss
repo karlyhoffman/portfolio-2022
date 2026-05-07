@@ -19,6 +19,20 @@
     width: $nav-width;
   }
 
+  // Safari liquid glass transparency fix
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: calc(100% + #{$border-width});
+    left: 0;
+    right: 0;
+    height: 100px;
+    background-color: $white;
+    pointer-events: none;
+    z-index: 3;
+  }
+
   nav {
     height: 100%;
 
