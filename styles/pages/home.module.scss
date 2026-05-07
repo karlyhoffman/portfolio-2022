@@ -54,7 +54,8 @@
       display: block;
       position: relative;
 
-      &:not(.hero) {
+      &:not(.hero),
+      &.skills .primary {
         margin-bottom: 60px;
 
         @media screen and (min-width: $desktop) {
@@ -197,6 +198,7 @@
       &.skills {
         .primary {
           display: flex;
+          border-bottom: $border;
 
           &>div {
             flex: 1 1 50%;
