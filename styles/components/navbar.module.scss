@@ -8,29 +8,19 @@
   left: 0;
   right: 0;
   bottom: 0;
+  min-height: calc(var(--mobile-nav-height) + env(safe-area-inset-bottom));
   border: $border;
   background-color: $white;
-  z-index: 2;
+  padding-bottom: env(safe-area-inset-bottom);
+  z-index: 4;
 
   @media screen and (min-width: $desktop) {
     top: 0;
     left: calc(#{$aside-width} + #{$border-width});
     right: auto;
     width: $nav-width;
-  }
-
-  // Safari liquid glass transparency fix
-  &::before {
-    content: "";
-    display: block;
-    position: absolute;
-    top: calc(100% + #{$border-width});
-    left: 0;
-    right: 0;
-    height: 100px;
-    background-color: $white;
-    pointer-events: none;
-    z-index: 3;
+    min-height: 0;
+    padding-bottom: 0;
   }
 
   nav {

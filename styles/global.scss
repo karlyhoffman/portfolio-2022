@@ -8,8 +8,15 @@
   box-sizing: border-box;
 }
 
+:root {
+  --mobile-nav-height: 65px;
+  --ios-top-skim-height: 96px;
+  --ios-bottom-skim-height: 24px;
+}
+
 html {
-  background-color: $black;
+  min-height: 100%;
+  background-color: $white;
   margin: 0;
   padding: 0;
 }
@@ -17,11 +24,13 @@ html {
 body {
   display: block;
   position: relative;
+  min-height: 100%;
   background-color: $white;
   color: $black;
   font-size: 22px;
   line-height: 1;
   margin: 0;
+  overflow-x: hidden;
 
   @media screen and (min-width: $desktop) {
     font-size: 3vw;
@@ -49,22 +58,50 @@ body {
   }
 }
 
+#__next {
+  min-height: 100%;
+}
+
 #app {
+  position: relative;
+  min-height: 100vh;
   font-family: $fjalla-one;
   border: $border;
+  background-color: $white;
+  isolation: isolate;
+
+  @supports (min-height: 100dvh) {
+    min-height: 100dvh;
+  }
 
   // Safari liquid glass transparency fix
-  &::before {
+  &::before,
+  &::after {
     content: "";
     display: block;
-    position: absolute;
-    bottom: calc(100% + #{$border-width});
+    position: fixed;
     left: 0;
     right: 0;
-    height: 100px;
     background-color: $white;
     pointer-events: none;
-    z-index: 3;
+    z-index: 1;
+  }
+
+  &::before {
+    bottom: 100%;
+    height: calc(var(--ios-top-skim-height) + env(safe-area-inset-top));
+  }
+
+  &::after {
+    top: 100%;
+    height: calc(var(--mobile-nav-height) + var(--ios-bottom-skim-height) + env(safe-area-inset-bottom));
+  }
+
+  @media screen and (min-width: $desktop) {
+    &::before,
+    &::after {
+      display: none;
+    }
   }
 }
 

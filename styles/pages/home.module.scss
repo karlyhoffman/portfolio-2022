@@ -72,10 +72,18 @@
           align-items: center;
           position: relative;
           width: 100%;
-          height: calc(100vh - #{$border-width} - 75px); // 75px = mobile navbar
+          height: calc(100vh - #{$border-width} - var(--mobile-nav-height) - env(safe-area-inset-bottom));
+
+          @supports (height: 100dvh) {
+            height: calc(100dvh - #{$border-width} - var(--mobile-nav-height) - env(safe-area-inset-bottom));
+          }
 
           @media screen and (min-width: $desktop) {
             height: calc(100vh - #{$border-width});
+
+            @supports (height: 100dvh) {
+              height: calc(100dvh - #{$border-width});
+            }
           }
 
           &>div {
