@@ -72,17 +72,14 @@ export default function Home() {
           <h2 className="sr-only">About</h2>
           <div className={styles.intro_text}>
             <p>
-              Over the past nine years, I&apos;ve built a career in web development focusing on building
-              responsive, user-friendly web interfaces with a keen eye for detail. I have a
-              particular enthusiasm for smooth UX animations and micro-interactions—small touches
-              that make a product feel polished and intuitive.
+              Over the past nine years, I&apos;ve built a career in web development focusing on building responsive, user-friendly web interfaces with a keen eye for detail. I have a particular enthusiasm for smooth UX animations and micro-interactions—small touches that make a product feel polished and intuitive.
             </p>
 
             <p>
               Though frontend is my specialty, my full-stack coding academy training and experience
               at design agencies have sharpened my ability to learn quickly and deliver impactful
               features under tight timelines. I&apos;m comfortable diving into new technologies and
-              adapting as projects evolve—whether that means integrating APIs, debugging across the
+              adapting as projects evolve, whether that means integrating APIs, debugging across the
               stack, or collaborating closely with designers and stakeholders.
             </p>
           </div>
@@ -90,7 +87,15 @@ export default function Home() {
           <HeadlineReveal tag="h2" center>Philosophy</HeadlineReveal>
           <div className={styles.intro_text}>
             <p>
-              My development philosophy centers on writing clean, maintainable code that&apos;s easy to understand and built to last. I&apos;ve found that clear organization significantly improves efficiency and collaboration. While I see real value in using AI tools to get unstuck or explore alternatives, I prefer to start with documentation and established best practices. I believe that&apos;s how to build lasting skills and a deeper understanding.
+              My development philosophy centers on writing clean, maintainable code that&apos;s easy to understand and built to last. I&apos;ve found that clear organization doesn&apos;t just improve efficiency; it fosters better collaboration and eases cognitive strain when switching contexts.
+            </p>
+
+            <p>
+              While I love writing code from scratch, I recognize that AI-assisted development has also become an unavoidable part of modern software development. Lately, I&apos;ve been exploring different terminal agent workflows and methodologies, and my current approach of choice is Spec-Driven Development (SDD) with GitHub&apos;s <a href="https://github.com/github/spec-kit" target="_blank">SpecKit</a> framework.
+            </p>
+
+            <p>
+              SDD shifts the developer’s role from writing code by hand to reviewing and validating every implementation detail based on well-defined specifications. It requires developers to maintain a deep, foundational understanding of what&apos;s happening under the hood so they can guide output with clear requirements and constraints. With this approach, I&apos;d argue AI-assisted development through structured, intentional techniques makes engineers more knowledgeable, not lazier.
             </p>
           </div>
 
