@@ -8,6 +8,7 @@ function Layout({ children, fontClasses }) {
     <div id="app" className={fontClasses}>
       <Head>
         <title>Karly Hoffman | Web Developer</title>
+        <meta name="theme-color" content="#F8F0E3" />
         <meta
           name="description"
           content="Karly Hoffman, a quality web developer who knows how to learn quickly and isn't afraid to try new technologies."
