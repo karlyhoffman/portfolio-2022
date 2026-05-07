@@ -9,6 +9,7 @@ function Layout({ children, fontClasses }) {
       <Head>
         <title>Karly Hoffman | Web Developer</title>
         <meta name="theme-color" content="#F8F0E3" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
         <meta
           name="description"
           content="Karly Hoffman, a quality web developer who knows how to learn quickly and isn't afraid to try new technologies."
