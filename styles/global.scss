@@ -22,28 +22,36 @@ body {
   font-size: 22px;
   line-height: 1;
   margin: 0;
-  padding: $border-width;
 
   @media screen and (min-width: $desktop) {
     font-size: 3vw;
   }
 
-  &::before {
+  &::before,
+  &::after {
     content: "";
     display: block;
     position: fixed;
-    top: 0;
     left: 0;
     right: 0;
-    bottom: 0;
-    border: $border;
+    height: $border-width;
+    background-color: $black;
     pointer-events: none;
     z-index: 3;
+  }
+
+  &::before {
+    top: 0;
+  }
+
+  &::after {
+    bottom: 0;
   }
 }
 
 #app {
   font-family: $fjalla-one;
+  border: $border;
 }
 
 h1, h2, h3, h4, h5, h6, p {
