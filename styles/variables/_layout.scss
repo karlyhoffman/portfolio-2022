@@ -8,6 +8,6 @@ $nav-width: 9.5vw;
 $main-width: calc(100% - #{$aside-width} - #{$nav-width});
 
 $section-y-margin: 100px;
-$section-x-padding: 2vw;
+$section-x-padding: max(3vw, 24px);
 
 $desktop: 992px;

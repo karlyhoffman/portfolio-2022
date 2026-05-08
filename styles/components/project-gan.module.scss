@@ -8,10 +8,10 @@
     content: "";
     display: block;
     position: absolute;
-    top: -$section-x-padding * 2;
-    left: -$section-x-padding;
-    right: -$section-x-padding;
-    bottom: -$section-x-padding * 2;
+    top: calc(#{$section-x-padding} * -2);
+    left: calc(#{$section-x-padding} * -1);
+    right: calc(#{$section-x-padding} * -1);
+    bottom: calc(#{$section-x-padding} * -2);
     background-color: rgb(33, 39, 59);
   }
 
@@ -22,7 +22,7 @@
     grid-column-gap: 15px;
     grid-row-gap: 15px;
     position: relative;
-    width: calc(100% - ($section-x-padding * 2));
+    width: calc(100% - (#{$section-x-padding} * 2));
     max-width: calc((200px * 4) + (15px * 3));
     margin: $section-x-padding auto;
 

@@ -12,10 +12,10 @@
   .fries_wrapper {
     display: block;
     position: absolute;
-    top: -$section-x-padding;
-    left: -$section-x-padding;
-    right: -$section-x-padding;
-    bottom: -$section-x-padding;
+    top: calc(#{$section-x-padding} * -1);
+    left: calc(#{$section-x-padding} * -1);
+    right: calc(#{$section-x-padding} * -1);
+    bottom: calc(#{$section-x-padding} * -1);
     overflow: hidden;
 
     .fries {
