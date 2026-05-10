@@ -87,7 +87,7 @@ export default function Home() {
           <HeadlineReveal tag="h2" center>Philosophy</HeadlineReveal>
           <div className={styles.intro_text}>
             <p>
-              My development philosophy centers on writing clean, maintainable code that&apos;s easy to understand and built to last. I&apos;ve found that clear organization doesn&apos;t just improve efficiency; it fosters better collaboration and eases cognitive strain when switching contexts.
+              My development philosophy centers on writing clean, maintainable code that&apos;s easy to understand and built to last. I&apos;ve found that clear organization doesn&apos;t just improve efficiency; it fosters better collaboration and reduces cognitive debt when switching contexts.
             </p>
 
             <p>
