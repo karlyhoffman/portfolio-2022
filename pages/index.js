@@ -93,10 +93,6 @@ export default function Home() {
             <p>
               While I love writing code from scratch, I recognize that AI-assisted development has also become an unavoidable part of modern software development. Lately, I&apos;ve been exploring different terminal agent workflows and methodologies, and my current approach of choice is Spec-Driven Development (SDD) with GitHub&apos;s <a href="https://github.com/github/spec-kit" target="_blank">SpecKit</a> framework.
             </p>
-
-            <p>
-              SDD shifts the developer’s role from writing code by hand to reviewing and validating every implementation detail based on well-defined specifications. It requires developers to maintain a deep, foundational understanding of what&apos;s happening under the hood so they can guide output with clear requirements and constraints. With this approach, I&apos;d argue AI-assisted development through structured, intentional techniques makes engineers more knowledgeable, not lazier.
-            </p>
           </div>
 
           {!!MUSIC?.length && (
