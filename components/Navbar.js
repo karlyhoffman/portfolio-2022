@@ -13,7 +13,14 @@ function Navbar() {
   const { section } = useContext(CurrentSectionContext);
 
   const handleButtonClick = ({ id }) => {
-    gsap.to(window, { duration: 1, scrollTo: { y: `#${id}`, offsetY: 10 } });
+    const prefersReducedMotion =
+      typeof window !== 'undefined' &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    gsap.to(window, {
+      duration: prefersReducedMotion ? 0 : 1,
+      scrollTo: { y: `#${id}`, offsetY: 10 },
+    });
 
     GoogleAnalyticsEvent({
       action: 'navbar_item_click',

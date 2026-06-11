@@ -17,6 +17,9 @@ const InfiniteLoop = ({ children, className, reverse = false }) => {
   useEffect(() => {
     const animationID = Date.now();
     const timeline = gsap.timeline({ paused: false });
+    const prefersReducedMotion =
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     /* Set Starting Positions */
     const containerDimensions = itemsRef.current.reduce(
@@ -43,6 +46,13 @@ const InfiniteLoop = ({ children, className, reverse = false }) => {
 
     const { width, height } = containerDimensions;
     setContainerHeight(height);
+
+    if (prefersReducedMotion) {
+      // Skip the looping animation entirely; items remain statically positioned.
+      return () => {
+        timeline.pause(0).kill(true);
+      };
+    }
 
     /* Animate Items */
     const modifierFunc = reverse

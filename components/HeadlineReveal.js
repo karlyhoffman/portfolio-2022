@@ -13,6 +13,15 @@ const HeadlineReveal = ({ children, tag = 'h3', center = false }) => {
   const Tag = tag;
 
   useLayoutEffect(() => {
+    const prefersReducedMotion =
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (prefersReducedMotion) {
+      gsap.set(el.current, { translateY: "0%" });
+      return;
+    }
+
     gsap.to(el.current, {
       translateY: "3%",
       duration: 0.4,
