@@ -6,7 +6,12 @@ function Footer() {
     <footer className={styles.footer}>
       <div className={styles.col_left}>
         Built with{" "}
-        <a href="https://nextjs.org/" target="_blank" rel="noreferrer">
+        <a
+          href="https://nextjs.org/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Next.js (opens in a new tab)"
+        >
           <strong>Next.js</strong>
         </a>{" "}
         March 2022
@@ -15,7 +20,8 @@ function Footer() {
         <a
           href="https://github.com/karlyhoffman/portfolio-2022"
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
+          aria-label="View source code on GitHub (opens in a new tab)"
         >
           View Source Code
         </a>

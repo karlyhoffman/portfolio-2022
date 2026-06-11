@@ -33,7 +33,7 @@ export default function Home() {
   return (
     <div id={styles.home}>
       {!!SECTIONS?.length && (
-        <aside>
+        <aside aria-hidden="true">
           <ul>
             {SECTIONS.map(({ id, subtitle }) => (
               <li key={id} className={classNames({ [styles.active]: section === id })}>
@@ -91,7 +91,7 @@ export default function Home() {
             </p>
 
             <p>
-              While I love writing code from scratch, I recognize that AI-assisted development has also become an unavoidable part of modern software development. Lately, I&apos;ve been exploring different terminal agent workflows and methodologies, and my current approach of choice is Spec-Driven Development (SDD) with GitHub&apos;s <a href="https://github.com/github/spec-kit" target="_blank">SpecKit</a> framework.
+              While I love writing code from scratch, I recognize that AI-assisted development has also become an unavoidable part of modern software development. Lately, I&apos;ve been exploring different terminal agent workflows and methodologies, and my current approach of choice is Spec-Driven Development (SDD) with GitHub&apos;s <a href="https://github.com/github/spec-kit" target="_blank" rel="noopener noreferrer" aria-label="SpecKit (opens in a new tab)">SpecKit</a> framework.
             </p>
           </div>
 
@@ -104,7 +104,8 @@ export default function Home() {
                     <a
                       href={url}
                       target="_blank"
-                      rel="noreferrer"
+                      rel="noopener noreferrer"
+                      aria-label={`Listen to "${album}" by ${artist} (opens in a new tab)`}
                       onClick={() =>
                         handleOutboundClick({
                           event_category: "outbound_link_click",
@@ -115,7 +116,7 @@ export default function Home() {
                     >
                       <Image
                         src={image}
-                        alt={`"${album}" by ${artist}`}
+                        alt=""
                         fill
                         sizes="(max-width: 992px) 20vw, (max-width: 1800px) 12vw"
                       />
@@ -155,7 +156,8 @@ export default function Home() {
                     <a
                       href={url}
                       target="_blank"
-                      rel="noreferrer"
+                      rel="noopener noreferrer"
+                      aria-label={`${name} (opens in a new tab)`}
                       onClick={() =>
                         handleOutboundClick({
                           event_category: "outbound_link_click",
@@ -237,8 +239,9 @@ export default function Home() {
                       <a
                         href={url}
                         target="_blank"
-                        rel="noreferrer"
+                        rel="noopener noreferrer"
                         className={styles.view_project}
+                        aria-label={`View ${title} award (opens in a new tab)`}
                         onClick={() =>
                           handleOutboundClick({
                             event_category: 'outbound_link_click',
@@ -254,8 +257,9 @@ export default function Home() {
                         <a
                           href={projectUrl}
                           target="_blank"
-                          rel="noreferrer"
+                          rel="noopener noreferrer"
                           className={styles.view_project}
+                          aria-label={`View ${title} project (opens in a new tab)`}
                           onClick={() =>
                             handleOutboundClick({
                               event_category: 'outbound_link_click',
@@ -279,24 +283,32 @@ export default function Home() {
           <section id="contact" className={styles.contact}>
             <HeadlineReveal tag="h2">Contact</HeadlineReveal>
             <ul className="grid">
-              {CONTACT.map(({ label, url }) => (
-                <li key={label}>
-                  <a
-                    href={url}
-                    target="_blank"
-                    rel="noreferrer"
-                    onClick={() =>
-                      handleOutboundClick({
-                        event_category: "outbound_link_click",
-                        event_label: label,
-                        url,
-                      })
-                    }
-                  >
-                    {label}
-                  </a>
-                </li>
-              ))}
+              {CONTACT.map(({ label, url }) => {
+                const isExternal = !url.startsWith("mailto:");
+                return (
+                  <li key={label}>
+                    <a
+                      href={url}
+                      target={isExternal ? "_blank" : undefined}
+                      rel={isExternal ? "noopener noreferrer" : undefined}
+                      aria-label={
+                        isExternal
+                          ? `${label} (opens in a new tab)`
+                          : `Email Karly Hoffman`
+                      }
+                      onClick={() =>
+                        handleOutboundClick({
+                          event_category: "outbound_link_click",
+                          event_label: label,
+                          url,
+                        })
+                      }
+                    >
+                      {label}
+                    </a>
+                  </li>
+                );
+              })}
             </ul>
           </section>
         )}

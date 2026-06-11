@@ -27,19 +27,27 @@ function Navbar() {
 
   return (
     <header className={styles.navigation}>
-      <nav>
+      <nav aria-label="Sections">
         {!!SECTIONS?.length && (
           <ul>
-            {SECTIONS.map(({ id }) => (
-              <li
-                key={id}
-                className={classNames({ [styles.active]: section === id })}
-              >
-                <button onClick={() => handleButtonClick({ id })} type="button">
-                  {id}
-                </button>
-              </li>
-            ))}
+            {SECTIONS.map(({ id, subtitle }) => {
+              const isActive = section === id;
+              return (
+                <li
+                  key={id}
+                  className={classNames({ [styles.active]: isActive })}
+                >
+                  <button
+                    onClick={() => handleButtonClick({ id })}
+                    type="button"
+                    aria-label={`Jump to ${subtitle} section`}
+                    aria-current={isActive ? "true" : undefined}
+                  >
+                    {id}
+                  </button>
+                </li>
+              );
+            })}
           </ul>
         )}
       </nav>
