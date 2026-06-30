@@ -24,11 +24,11 @@ const SKILLS = {
     }),
   ],
   tools: [
-    new Tool({ name: 'Figma', url: 'https://www.figma.com/' }),
     new Tool({ name: 'Spec Kit', url: 'https://github.com/github/spec-kit' }),
     new Tool({ name: 'Claude CLI', url: 'https://code.claude.com/docs/en/cli-reference' }),
     new Tool({ name: 'Squoosh', url: 'https://squoosh.app/' }),
     new Tool({ name: 'Jira', url: 'https://www.atlassian.com/software/jira' }),
+    new Tool({ name: 'Figma', url: 'https://www.figma.com/' }),
     new Tool({ name: 'Prismic', url: 'https://prismic.io/' }),
     new Tool({ name: 'Craft CMS', url: 'https://craftcms.com/' }),
     new Tool({ name: 'Postman', url: 'https://www.postman.com' }),
