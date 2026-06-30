@@ -72,7 +72,7 @@ export default function Home() {
           <h2 className="sr-only">About</h2>
           <div className={styles.intro_text}>
             <p>
-              Over the past nine years, I&apos;ve built a career in web development focusing on building responsive, user-friendly web interfaces with a keen eye for detail. I have a particular enthusiasm for smooth UX animations and micro-interactions—small touches that make a product feel polished and intuitive.
+              Over the past nine years, I&apos;ve built a career in software development focusing on building responsive, user-friendly web interfaces with a keen eye for detail. I have a particular enthusiasm for smooth UX animations and micro-interactions—small touches that make a product feel polished and intuitive.
             </p>
 
             <p>
@@ -91,7 +91,7 @@ export default function Home() {
             </p>
 
             <p>
-              While I love writing code from scratch, I recognize that AI-assisted development has also become an unavoidable part of modern software development. Lately, I&apos;ve been exploring different terminal agent workflows and methodologies, and my current approach of choice is Spec-Driven Development (SDD) with GitHub&apos;s <a href="https://github.com/github/spec-kit" target="_blank" rel="noopener noreferrer" aria-label="SpecKit (opens in a new tab)">SpecKit</a> framework.
+              While I love writing code from scratch, I recognize that AI-assisted development has also become an unavoidable part of modern software development. Lately, I&apos;ve been exploring different terminal agent workflows and methodologies, and my current approach of choice is Spec-Driven Development (SDD) with GitHub&apos;s <a href="https://github.com/github/spec-kit" target="_blank" rel="noopener noreferrer" aria-label="SpecKit (opens in a new tab)">Spec Kit</a> toolkit. I recently wrote a <a href="https://dev.to/karlyhoffman/reviving-an-abandoned-side-project-with-speckit-and-copilot-3517" target="_blank" rel="noopener noreferrer" aria-label="Read the article on Dev.to (opens in a new tab)">Dev.to article</a> about it.
             </p>
           </div>
 
