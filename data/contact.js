@@ -12,7 +12,7 @@ const CONTACT = [
     url: 'mailto:karlyhoffman@gmail.com',
   }),
   new Contact({
-    label: 'Github',
+    label: 'GitHub',
     url: 'https://github.com/karlyhoffman',
   }),
   new Contact({
