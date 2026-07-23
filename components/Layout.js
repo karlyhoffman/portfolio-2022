@@ -12,7 +12,7 @@ function Layout({ children, fontClasses }) {
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
         <meta
           name="description"
-          content="Karly Hoffman, a quality developer who knows how to learn quickly and isn't afraid to try new technologies."
+          content="My development philosophy centers on writing clean, maintainable code that's easy to understand and built to last."
         />
         <link rel="icon" href="/favicon.ico" />
         {isProduction && <GoogleAnalytics />}
