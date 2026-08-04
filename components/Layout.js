@@ -1,7 +1,5 @@
 import Head from "next/head";
-import { GoogleAnalytics, Navbar, Footer } from "components";
-
-const isProduction = process.env.NODE_ENV === "production";
+import { Navbar, Footer } from "components";
 
 function Layout({ children, fontClasses }) {
   return (
@@ -15,7 +13,6 @@ function Layout({ children, fontClasses }) {
           content="My development philosophy centers on writing clean, maintainable code that's easy to understand and built to last."
         />
         <link rel="icon" href="/favicon.ico" />
-        {isProduction && <GoogleAnalytics />}
       </Head>
       <Navbar />
       {children}

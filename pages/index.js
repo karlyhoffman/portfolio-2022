@@ -9,7 +9,6 @@ import {
   ProjectOutsideAcademy,
   ProjectGAN,
   ProjectMcD,
-  GoogleAnalyticsEvent,
 } from "components";
 import styles from "styles/pages/home.module.scss";
 
@@ -22,13 +21,6 @@ const PROJECT_DEMOS = {
 export default function Home() {
   const { section } = useContext(CurrentSectionContext);
   const currentYear = new Date().getFullYear() || "";
-
-  const handleOutboundClick = (params) => {
-    GoogleAnalyticsEvent({
-      action: "outbound_link_click",
-      params,
-    });
-  };
 
   return (
     <div id={styles.home}>
@@ -106,13 +98,6 @@ export default function Home() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={`Listen to "${album}" by ${artist} (opens in a new tab)`}
-                      onClick={() =>
-                        handleOutboundClick({
-                          event_category: "outbound_link_click",
-                          event_label: `Album (${album} by ${artist})`,
-                          url,
-                        })
-                      }
                     >
                       <Image
                         src={image}
@@ -158,13 +143,6 @@ export default function Home() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={`${name} (opens in a new tab)`}
-                      onClick={() =>
-                        handleOutboundClick({
-                          event_category: "outbound_link_click",
-                          event_label: name,
-                          url,
-                        })
-                      }
                     >
                       {name}
                     </a>
@@ -210,13 +188,6 @@ export default function Home() {
                     href={url}
                     target="_blank"
                     rel="noreferrer"
-                    onClick={() =>
-                      handleOutboundClick({
-                        event_category: "outbound_link_click",
-                        event_label: title,
-                        url,
-                      })
-                    }
                   >
                     {PROJECT_DEMOS[id]}
                   </a>
@@ -242,13 +213,6 @@ export default function Home() {
                         rel="noopener noreferrer"
                         className={styles.view_project}
                         aria-label={`View ${title} award (opens in a new tab)`}
-                        onClick={() =>
-                          handleOutboundClick({
-                            event_category: 'outbound_link_click',
-                            event_label: title,
-                            url,
-                          })
-                        }
                       >
                         View Award
                       </a>
@@ -260,13 +224,6 @@ export default function Home() {
                           rel="noopener noreferrer"
                           className={styles.view_project}
                           aria-label={`View ${title} project (opens in a new tab)`}
-                          onClick={() =>
-                            handleOutboundClick({
-                              event_category: 'outbound_link_click',
-                              event_label: `Project Link - ${title}`,
-                              url: projectUrl,
-                            })
-                          }
                         >
                           View Project
                         </a>
@@ -295,13 +252,6 @@ export default function Home() {
                         isExternal
                           ? `${label} (opens in a new tab)`
                           : `Email Karly Hoffman`
-                      }
-                      onClick={() =>
-                        handleOutboundClick({
-                          event_category: "outbound_link_click",
-                          event_label: label,
-                          url,
-                        })
                       }
                     >
                       {label}

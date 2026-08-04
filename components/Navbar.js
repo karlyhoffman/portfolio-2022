@@ -4,7 +4,6 @@ import { gsap } from 'gsap';
 import { ScrollToPlugin } from 'gsap/dist/ScrollToPlugin';
 import CurrentSectionContext from 'context/CurrentSection';
 import { SECTIONS } from 'data';
-import { GoogleAnalyticsEvent } from 'components';
 import styles from 'styles/components/navbar.module.scss';
 
 gsap.registerPlugin(ScrollToPlugin);
@@ -20,15 +19,6 @@ function Navbar() {
     gsap.to(window, {
       duration: prefersReducedMotion ? 0 : 1,
       scrollTo: { y: `#${id}`, offsetY: 10 },
-    });
-
-    GoogleAnalyticsEvent({
-      action: 'navbar_item_click',
-      params: {
-        event_category: 'navbar_click',
-        event_label: id,
-        section: id,
-      },
     });
   };
 

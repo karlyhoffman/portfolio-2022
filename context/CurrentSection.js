@@ -1,7 +1,6 @@
 import { createContext, useState, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { GoogleAnalyticsEvent } from 'components';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -28,17 +27,6 @@ export const CurrentSectionProvider = ({ children }) => {
   useEffect(() => {
     setTimeout(getCurrentSection, 500); // set slight delay for layout shift
   }, []);
-
-  useEffect(() => {
-    GoogleAnalyticsEvent({
-      action: 'section_change',
-      params: {
-        event_category: 'section_change',
-        event_label: section,
-        section,
-      },
-    });
-  }, [section]);
 
   return (
     <CurrentSectionContext.Provider value={{ section }}>
