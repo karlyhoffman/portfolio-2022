@@ -68,11 +68,7 @@ export default function Home() {
             </p>
 
             <p>
-              Though front-end is my specialty, my full-stack coding academy training and experience
-              at design agencies have sharpened my ability to learn quickly and deliver impactful
-              features under tight timelines. I&apos;m comfortable diving into new technologies and
-              adapting as projects evolve, whether that means integrating APIs, debugging across the
-              stack, or collaborating closely with designers and stakeholders.
+              Though front-end is my specialty, my full-stack coding academy training and experience at design agencies have sharpened my ability to learn quickly and deliver impactful features under tight timelines. Much of that work involved building bespoke applications wired into content management systems, giving me extensive hands-on experience designing and consuming REST APIs and building dependable integrations. I&apos;m comfortable diving into new technologies and adapting as projects evolve, whether that means connecting to a new platform, debugging across the stack, or collaborating closely with designers and stakeholders.
             </p>
           </div>
 
