@@ -110,7 +110,7 @@ export default function Home() {
         </section>
 
         <section id="skills" className={styles.skills}>
-          <h2 className="sr-only">Expertise</h2>
+          <h2 className="sr-only">Skills</h2>
           {!!SKILLS.primary?.length && (
             <div className={styles.primary}>
               {SKILLS.primary.map(({ categoryName = '', skills = [] }) => (
