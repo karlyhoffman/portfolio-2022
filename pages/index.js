@@ -38,24 +38,24 @@ export default function Home() {
 
       <main>
         <section id="home" className={styles.hero}>
-          <h1 className="sr-only">Karly Hoffman&apos;s {currentYear} Developer Portfolio</h1>
+          <h1 className="sr-only">Karly Hoffman&apos;s Software Developer Portfolio</h1>
 
           <div className={styles.title} aria-hidden="true">
             <div>
-              <span>KARLY HOFFMAN</span>
-            </div>
-            <div>
-              <span>DEVELOPER</span>
-            </div>
-            <div>
-              <InfiniteLoop reverse>
-                {[...Array(8).keys()].map((el) => (
-                  <span key={el}>{currentYear} • </span>
-                ))}
-              </InfiniteLoop>
-            </div>
-            <div>
               <span>PORTFOLIO</span>
+            </div>
+            <div>
+              <span>KARLY</span>
+            </div>
+            <div>
+              {/* <InfiniteLoop reverse> */}
+                {[...Array(2).keys()].map((el) => (
+                  <span key={el}>&nbsp;SOFTWARE&nbsp;DEVELOPER&nbsp;</span>
+                ))}
+              {/* </InfiniteLoop> */}
+            </div>
+            <div>
+              <span>HOFFMAN</span>
             </div>
           </div>
         </section>

@@ -94,13 +94,13 @@
             align-items: center;
             height: 25%;
             border-bottom: $border;
+            white-space: nowrap;
 
             @media screen and (min-width: $desktop) {
               height: 33.33%;
             }
 
             &:nth-child(1) {
-              // karly
               font-size: 15vw;
 
               @media screen and (min-width: $desktop) {
@@ -108,37 +108,45 @@
               }
             }
 
-            &:nth-child(2) {
-              // developer
+            &:nth-child(2),
+            &:nth-child(3),
+            &:nth-child(4) {
               font-size: 21vw;
               padding-top: 1.5vw;
 
               @media screen and (min-width: $desktop) {
-                font-size: 17vw;
+                font-size: 17.5vw;
                 padding-top: 1.1vw;
               }
             }
 
+            // TEMP
             &:nth-child(3) {
-              // year
-              position: relative;
-              font-size: 17vw;
-              padding-top: 1.5vw;
+              --s: 177vw; /* size of the text */
+              --d: 20s; /* animation duration */
+              --n: 2; /* number of visible images */
+
+              display: flex;
+              overflow: hidden;
+
+              span {
+                width: var(--s);
+                offset: shape(from calc(var(--s)/-2) 50%, hline by calc(sibling-count()*max(100%/var(--n), var(--s))));
+                animation: x var(--d) linear infinite calc(-1*sibling-index()*var(--d)/sibling-count());
+              }
+
+              @keyframes x {
+                from {
+                  offset-distance: 100%;
+                }
+              }
 
               @media screen and (min-width: $desktop) {
+                --s: 129.53vw; /* size of the text */
+                --d: 30s; /* animation duration */
+
                 font-size: 15vw;
                 padding-top: 1.25vw;
-              }
-            }
-
-            &:nth-child(4) {
-              // portfolio
-              font-size: 21.3vw;
-              padding-top: 1.6vw;
-
-              @media screen and (min-width: $desktop) {
-                font-size: 17.3vw;
-                padding-top: 1.5vw;
               }
             }
           }

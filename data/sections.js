@@ -9,7 +9,7 @@ class Section {
 const SECTIONS = [
   new Section({
     id: 'home',
-    subtitle: 'Karly Hoffman',
+    subtitle: 'Portfolio',
   }),
   new Section({
     id: 'about',
