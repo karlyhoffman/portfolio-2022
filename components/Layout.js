@@ -5,7 +5,7 @@ function Layout({ children, fontClasses }) {
   return (
     <div id="app" className={fontClasses}>
       <Head>
-        <title>Karly Hoffman | Developer</title>
+        <title>Karly Hoffman | Software Developer</title>
         <meta name="theme-color" content="#F8F0E3" />
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
         <meta
