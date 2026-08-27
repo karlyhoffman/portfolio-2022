@@ -48,11 +48,11 @@ export default function Home() {
               <span>KARLY</span>
             </div>
             <div>
-              {/* <InfiniteLoop reverse> */}
-                {[...Array(2).keys()].map((el) => (
+              <InfiniteLoop reverse>
+                {[...Array(3).keys()].map((el) => (
                   <span key={el}>&nbsp;SOFTWARE&nbsp;DEVELOPER&nbsp;</span>
                 ))}
-              {/* </InfiniteLoop> */}
+              </InfiniteLoop>
             </div>
             <div>
               <span>HOFFMAN</span>

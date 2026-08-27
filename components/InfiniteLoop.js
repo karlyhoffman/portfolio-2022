@@ -108,7 +108,7 @@ const InfiniteLoop = ({ children, className, reverse = false }) => {
       className={classNames(styles.container, className)}
       style={{ height: containerHeight }}
     >
-      <div className={styles.wrapper}>
+      <div className={styles.wrapper} data-reverse={reverse}>
         {items.map((item, index) => (
           <div
             className={styles.item}

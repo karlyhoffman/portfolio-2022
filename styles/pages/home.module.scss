@@ -120,31 +120,8 @@
               }
             }
 
-            // TEMP
             &:nth-child(3) {
-              --s: 177vw; /* size of the text */
-              --d: 20s; /* animation duration */
-              --n: 2; /* number of visible images */
-
-              display: flex;
-              overflow: hidden;
-
-              span {
-                width: var(--s);
-                offset: shape(from calc(var(--s)/-2) 50%, hline by calc(sibling-count()*max(100%/var(--n), var(--s))));
-                animation: x var(--d) linear infinite calc(-1*sibling-index()*var(--d)/sibling-count());
-              }
-
-              @keyframes x {
-                from {
-                  offset-distance: 100%;
-                }
-              }
-
               @media screen and (min-width: $desktop) {
-                --s: 129.53vw; /* size of the text */
-                --d: 30s; /* animation duration */
-
                 font-size: 15vw;
                 padding-top: 1.25vw;
               }

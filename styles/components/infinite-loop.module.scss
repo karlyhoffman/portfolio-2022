@@ -10,6 +10,10 @@
     transform: translateX(-50%);
     white-space: nowrap;
 
+    &[data-reverse="true"] {
+      transform: translateX(-200%);
+    }
+
     .item {
       display: inline-block;
       vertical-align: middle;
